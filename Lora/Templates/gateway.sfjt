@@ -12,10 +12,12 @@
     // LoRaWAn region for the gateway
     region: eu868,
 
+    // The protocol used by the gateway.  This is a CT
+    // addition as we need to know whether to set up an
+    // MQTT ACL or not
     protocol: "MQTT" where isString($) && includes($, [
             "MQTT",
             "BasicStation"]),
-    },
 
     // The expected interval in seconds in which the gateway sends its statistics
     statsInterval: 30 where isInteger($),
