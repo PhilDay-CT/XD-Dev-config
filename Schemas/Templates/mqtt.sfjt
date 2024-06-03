@@ -1,0 +1,28 @@
+
+//
+// General Schema for data received from MQTT.   Schemas for 
+// specific applications should extend this by adding their
+// own definitions of schema.properties.data
+//
+{
+    type: object,
+    required: ['kind', 'metadata', 'data'],
+    additionalProperties: false,
+    properties: {
+        kind: {type: string, const: 'mqtt'},
+        ts:   {type: integer},
+        metadata: {
+            type: object,
+            required: ['topic', 'qos', 'retain'],
+            additionalProperties: false,
+            properties: {
+                topic:      {type: string},
+                qos:        {type: integer, minimum: 0,   maximum: 4000},
+                retain:     {type: boolean},
+                properties: {type: object}, 
+            },    
+        },
+        data: {type: object},
+        trace: require('./Templates/Trace.sfjt')
+    },
+}

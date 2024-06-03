@@ -1,0 +1,96 @@
+
+
+//
+// Device Settings for Emulators
+//
+
+let
+    EMULATOR: {
+      LoRa: {
+          max_fCnt_Jump: 50
+      },
+      DriftGroups: {
+          temperature: {
+              maxDrift: 2.0,
+              minValues: 3,
+              timeSpan: 10000,
+              driftPrecision: 2,
+              metric: temperature 
+          },
+          light: {
+              maxDrift: 40,
+              minValues: 2,    
+              timeSpan: 10000,
+              driftPrecision: 3,
+              metric: light 
+          }
+      },
+      Rate: {
+          period: 4000,
+          min: 1,
+          max: 2
+      }
+    },
+    
+    EMULATOR_1: $EMULATOR << {
+      DriftGroups: {
+          temperature: {
+              maxDrift: 2.0,
+              minValues: 3,
+              timeSpan: 10000,
+              driftPrecision: 2,
+              metric: temperature 
+          },
+          light: {
+              maxDrift: 40,
+              minValues: 2,    
+              timeSpan: 10000,
+              driftPrecision: 3,
+              metric: light 
+          }
+      },
+    },
+
+    EMULATOR_2: $EMULATOR << {
+        Rate: {
+          period: 4000,
+          min: 2,
+          max: 4
+        }
+      }
+
+in
+{
+    deadbeef00000001: $EMULATOR_1 << {
+    //    ThingsBoard: {token: "<<ThingsBoardToken>>"}
+    },
+
+    deadbeef00000002: $EMULATOR_1 << {
+    //    ThingsBoard: {token: "<<ThingsBoardToken>>"}
+    },
+
+    deadbeef00000003: $EMULATOR_1 << {
+    //    ThingsBoard: {token: "<<ThingsBoardToken>>"}
+    },
+    
+    deadbeef00000004: $EMULATOR_1 << {
+    //    ThingsBoard: {token: "<<ThingsBoardToken>>"}
+    },
+
+    deadbeef00000005: $EMULATOR_1 << {
+    //    ThingsBoard: {token: "<<ThingsBoardToken>>"}
+    },
+
+    deadbeef00000006: $EMULATOR_1 << {
+    //    ThingsBoard: {token: "<<ThingsBoardToken>>"}
+    },
+
+    deadbeef00000007: $EMULATOR_1 << {
+    //    ThingsBoard: {token: "<<ThingsBoardToken>>"}
+    },
+
+    deadbeef00000008: $EMULATOR_1 << {
+    //    ThingsBoard: {token: "<<ThingsBoardToken>>"}
+    },
+
+}

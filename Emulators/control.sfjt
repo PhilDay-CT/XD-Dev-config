@@ -1,0 +1,33 @@
+
+//
+// Configuration file to simplify enabling / disabling
+// each emulator.
+//
+
+{
+    //
+    // Use the following values to enable or disable specific emulators 
+    //
+
+    // Data Drift Anomaly
+    emdev1: true,    // Continually sends data with small random offsets,
+    emdev2: false,
+    emdev3: false,
+    emdev4: false,    // Device with a temperature jump after 10 frames
+
+    // LoRaWAN Frame Count Anomaly
+    emdev5: false,    // Jump in frame count after 10 frames, resets after 5 frames
+
+    // Date Rate Anomaly
+    emdev6: false,    // Change in frame frequency after 8 frames
+
+    // Change of Gateway 
+    emdev7: true,    // Switch to different gateway every 12th frame
+
+    // Array based metrics
+    emdev8: true,
+
+    // Generates a schema error
+    emdev9: false,
+
+}

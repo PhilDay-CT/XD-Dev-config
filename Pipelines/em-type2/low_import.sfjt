@@ -1,0 +1,28 @@
+
+//
+// Telemetry Pipeline for type 2 Emulators - Low
+//
+
+
+let
+    TEMPLATE_DIR: env(CT_HOME) + '/templates/',
+ 
+    // Templates configured for this domain
+    MQTT_RECEIVER: require($TEMPLATE_DIR + 'MQTT_Receiver.sfjs'),
+    XD_SENDER:   require($TEMPLATE_DIR + 'XD_Sender.sfjs'),
+ 
+in
+{
+ 
+    MQTT: $MQTT_RECEIVER << {
+        topics: ['lora/em1/EmType2/#'],
+        format: 'json',
+        targets: {
+            default: Sender,
+        },
+    },
+ 
+    Sender: $XD_SENDER << {
+        id: 'em-type2',
+    },
+}

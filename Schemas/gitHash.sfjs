@@ -1,0 +1,67 @@
+
+//
+// Schema for a gitHash message
+//
+
+let
+    SFJS_MODEL: require('./Templates/sfjsModel.sfjt'),
+
+    // Regex for various names 
+    REPO_NAME: '^[a-zA-Z0-9\\-\\_\\.]*$',
+    FILE_NAME: '^[a-zA-Z0-9\\-\\_\\.]*$',
+    HEX: '^[A-Fa-f0-9]*$',
+
+    // Pattern for the hash of a file
+    GIT_SHA1: {
+        type: string,
+        pattern: $HEX, 
+        maxLength: 40,
+        minLength: 40,
+    },
+
+    // Set of files in a repo
+    GIT_FILE_HASH: {
+        type: 'object',
+        patternProperties: {
+            $FILE_NAME: $GIT_SHA1
+        },
+        additionalProperties: false,
+    },
+
+    // Pattern for each repo
+    GIT_REPO: {
+        type: 'object',
+        properties: {
+            files: $GIT_FILE_HASH
+        },
+        required: ['files'],
+        additionalProperties: false,
+    },
+
+    GIT_HASH: {
+        type: 'object',
+        properties: {
+            git: {
+                type: 'object',
+                patternProperties: {
+                    $REPO_NAME: $GIT_REPO
+                }
+            }
+        },
+        required: ['git'],
+        additionalProperties: false,
+    
+    },
+
+in
+{
+
+    sfjs: {
+
+        // Low Side Git Hash 
+        githashlow : ($SFJS_MODEL << {
+            model: $GIT_HASH
+        }).schema
+    }
+
+}

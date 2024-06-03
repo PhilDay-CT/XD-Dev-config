@@ -1,0 +1,18 @@
+(
+    {
+        /* 
+         * Divert message to Alert Stream
+         */
+        "outputs": {
+            "alert": {
+                "kind": "alert",
+                "alert": {
+                    "type": "Function",
+                    "from": $lookup($$, "name")
+                },
+                "data": $lookup($$, "input").data
+            }
+        },
+        "context": $lookup($$, "context")
+    }
+)

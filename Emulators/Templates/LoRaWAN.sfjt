@@ -1,0 +1,117 @@
+
+
+//
+// Template for a LoraWan Sensoe Emulator 
+//
+
+{
+    Gateway1: {
+        gatewayId:"fcc23dfffe2ded3c",
+        uplinkId: 1000,
+        nsTime: "timedate_format('YYYY-MM-DDTHH:MM:ss.sss')+'Z'",
+        rssi: -31,
+        snr: 5.2,
+        channel: 2,
+        rfChain: 1,
+        location:{
+            latitude:   51.89921,
+            longitude:  -2.07787,
+            altitude:   72
+        },
+        context: "Rd2dGw==",
+        metadata:{
+            region_config_id:"eu868",
+            region_common_name:"EU868"
+        },
+        crcStatus: "CRC_OK"
+    },
+
+    Gateway2: {
+        gatewayId:"fcc23dfffe2d9eaf",
+        uplinkId: 2000,
+        nsTime: "timedate_format('YYYY-MM-DDTHH:MM:ss.sss')+'Z'",
+        rssi:    -31,
+        snr: 5.2,
+        channel: 2,
+        rfChain: 1,
+        location:{
+            latitude:   51.89709,
+            longitude:  -2.07781,
+            altitude:   103
+        },
+        context: "Rd2dGw==",
+        metadata:{
+            region_config_id:"eu868",
+            region_common_name:"EU868"
+        },
+        crcStatus: "CRC_OK"
+    },
+
+    Gateway3: {
+        gatewayId:"fcc23dfffe2dc85f",
+        uplinkId: 3000,
+        nsTime: "timedate_format('YYYY-MM-DDTHH:MM:ss.sss')+'Z'",
+        rssi:    -31,
+        snr: 5.2,
+        channel: 2,
+        rfChain: 1,
+        location:{
+            latitude:   51.909971,
+            longitude:  -2.078621,
+            altitude:   60
+        },
+        context: "Rd2dGw==",
+        metadata:{
+            region_config_id:"eu868",
+            region_common_name:"EU868"
+        },
+        crcStatus: "CRC_OK"
+    },
+
+    // Base Template for a Lora payload 
+    LoraPayload: {
+        deduplicationId: "uuid()",
+        time: "timedate_format('YYYY-MM-DDTHH:MM:ss.sss')+'Z'",
+        deviceInfo: {
+            tenantId: "9edc1006-8c8d-4c0d-ba0e-5982a651d29f",
+            tenantName: "emulators",
+            applicationId: _,
+            applicationName: _,
+            deviceProfileId:_,
+            deviceProfileName: '',
+            deviceName: '',
+            devEui:_,
+            deviceClassEnabled: "CLASS_A",
+            tags: {}
+        },
+        devAddr: "01cfc83b",
+        adr: true,
+        dr: 5,
+        fCnt: 0,
+        fPort: 0,
+        confirmed: true,
+        data: "",
+        object: {},
+        rxInfo: [],
+        txInfo:{
+            frequency:868500000,
+            modulation: {
+                lora: {
+                    bandwidth: 125000,
+                    spreadingFactor: 7,
+                    codeRate: "CR_4_5"
+                },
+            },
+        },
+    },
+
+    // Template for a Lora Device Emulator
+    LoraDevice: {
+        base: {
+            data: @LoraPayload,
+        },
+        topic: @topicPrefix+@base.data.deviceInfo.deviceProfileName+'/'+stringify(@base.data.fPort)+'/'+@base.data.deviceInfo.deviceName,
+        topicPrefix: "lora/app1/",
+    }
+
+}

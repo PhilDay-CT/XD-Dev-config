@@ -1,0 +1,22 @@
+
+//
+// Device profile for Elsys devices
+// https://www.elsys.se/en/sensors/
+//
+let
+   DEVICE_PROFILE: require('../../Templates/deviceProfile.sfjt'),
+in
+
+{
+    deviceProfiles: {
+        Elsys: $DEVICE_PROFILE << {
+            macVersion: "1.0.3",
+            supportsOtaa: true,
+            supportsClassB: false,
+            supportsClassC: false,
+            payloadCodecRuntime: "JS",
+            payloadCodecScript: readstring('./Codec.js'),
+            uplinkInterval: 600
+        }
+    }
+}

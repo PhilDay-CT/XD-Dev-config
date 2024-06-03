@@ -1,0 +1,68 @@
+
+//
+// Schema defitnion for an Emulated Lora Device
+//
+
+let 
+
+    LORA_DEVICE: require('./Templates/lora.sfjt')
+    
+in
+{
+    mqtt: {
+
+        //
+        // Sensor Schema for emulator type 1
+        //
+        "lora/**/EmType1/**": ($LORA_DEVICE << {
+            payload: {
+                type: object,
+                properties: {
+                    data: {
+                        type: object,
+                        properties : {
+                            temperature: {type: number,  minimum: -20, maximum: 120},
+                            light:       {type: integer, minimum: 0,   maximum: 1000},
+                            battery:     {type: number, minimum: 0,   maximum: 4000},
+                            motion:      {type: integer, minimum: 0,   maximum: 100}
+                        },
+                        required: [temperature, light, battery, motion],
+                        additionalProperties: false            
+                    }
+                },
+                required: [data],
+                additionalProperties: false                
+            },
+        }).schema,
+
+        //
+        // Sensor Schema for emulator type2
+        //
+        "lora/**/EmType2/**": ($LORA_DEVICE << {
+            payload: {
+                type: object,
+                properties: {
+                    data: {        
+                        type: array,
+                        items : [
+                            {
+                                type: object,
+                                properties: {
+                                    date:  {type: string},
+                                    label: {type: string},
+                                    value: {type: number}
+                                },
+                                required: [date, label, value],
+                                additionalProperties: false            
+                            }
+                        ]
+                    },
+                },
+                required: [data],
+                additionalProperties: false                
+            },
+        }).schema,
+
+    }
+ 
+}

@@ -1,0 +1,51 @@
+//
+// Chirpstack Device Template
+//
+
+{
+
+    description: ""  where isString($),
+    tags: {} where isObj($),
+
+    // Application to which the device will be added.
+    // It is possible to move a device to a different application on update.
+    application: _  where isString($),
+
+    // Device EUI (HEX encoded).
+    devEUI: _ where isString($),
+
+    // Device Profile Name
+    deviceProfile: _ where isString($),
+
+    // Device is disabled.
+    isDisabled: false where isBoolean($),
+
+    // Skip frame-counter checks (this is insecure,
+    // but could be helpful for debugging).
+    skipFCntCheck: false where isBoolean($),
+
+    // Variables can be used to substitute placeholders in for example
+    // integrations, e.g. in case an integration requires the configuration
+    // of a device specific token.
+    variables: {} where isObj($),
+
+    // Activation keys.  AppKey is only required for LoraWAN 1.1 devices
+    keys: {
+        nwkKey: _ where isString($),
+        appKey: "" where isString($),
+     },
+
+    // Settings to be sent to the device.  These are sent
+    // when the devide joins, and whenever they are changed
+    //
+    //  For example for an Elsys Device
+    //      settings: {
+    //            fPort: 6,
+    //            values: {
+    //                SplPer: 120
+    //            }
+    //        }
+    //
+    settings: {} where isObj($),
+
+}

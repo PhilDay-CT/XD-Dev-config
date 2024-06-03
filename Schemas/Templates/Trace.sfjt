@@ -1,0 +1,22 @@
+
+//
+// Schmema for the trace information that can be added to
+// each message to support Pipeline Metrics 
+//
+{
+    type: array,
+    items : {
+        type: object,
+        properties: {
+            event:    {type: string},
+            ts:       {type: number},
+            domain:   {type: string},
+            group:    {type: string},
+            pipeline: {type: string},
+            name:     {type: string},
+            value:    {type: number},
+        },
+        requred: [event, ts, domain, group, pipeline, name],
+        additionalProperties: false            
+    },
+}

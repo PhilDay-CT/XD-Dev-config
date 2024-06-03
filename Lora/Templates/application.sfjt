@@ -1,0 +1,12 @@
+//
+// Chirpstack Application Template
+//
+
+{
+    // Application Description
+    description: "" where isString($),
+
+    // tags
+    tags: {} where isObj($),
+
+}

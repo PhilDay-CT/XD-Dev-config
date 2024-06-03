@@ -1,0 +1,23 @@
+
+//
+// Chirpstack Users
+//
+// Users get read only access in the UI. As we do
+// all configuration via the API its posible to have
+// a system with no users defined.
+//
+
+let
+
+    USER: require('./Templates/user.sfjt'),
+    
+in
+{
+    users: {
+
+        "ctxd-user@ctdx": $USER << {
+            password: "BeB0pALula",
+        },
+
+    }
+}

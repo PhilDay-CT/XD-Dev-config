@@ -1,0 +1,45 @@
+
+//
+// Example of an Application and MQTT Gateway Configuration
+//
+
+let
+
+    APPLICATION: require('./Templates/application.sfjt'),
+    
+in
+{
+
+    //
+    // An mqttGateway provides a bridge between the Chirpstack
+    // mqtt server and an external mqtt server (in effect its
+    // our own MQTT intergration). It's used by applications to
+    // send data from devices but to a topic that is strctured as 
+    //    <prefix>/<ApplicationNAme>/<DeviceProfileName>/<fport>/<DeviceName>
+    // which is easier to defien pipelines for
+    //
+    mqttGateways: {
+        ctxd_gw: {
+            mqtt: {
+                host: "<<MQTT HOST NAME >>",
+                protocol: mqtt,
+                port: 1883,
+            },
+        }
+    },
+
+    //
+    // This is the representation of a Chirpstack Application
+    // object - a container for devices
+    //
+    applications: {
+       "App1": $APPLICATION << {
+            description: "My Application",
+            mqttGateways: {
+                ctxd_gw: {
+                    prefix: 'lora/ctxd/app1/'
+                }
+            }
+        },
+    },
+}

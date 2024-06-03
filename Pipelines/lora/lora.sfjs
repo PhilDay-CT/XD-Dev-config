@@ -1,0 +1,18 @@
+
+//
+// Example Telemetry Pipeline for Lora Sensors
+//
+
+{
+    low: {
+        import: {
+            lora: readstring('./lora_low_import.sfjt'),
+        },
+    },
+
+    high: {
+        import: {
+            lora: readstring('./lora_high_import.sfjt'),
+        },
+    },
+}

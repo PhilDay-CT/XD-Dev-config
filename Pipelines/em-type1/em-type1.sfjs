@@ -1,0 +1,18 @@
+
+//
+// Telemetry Pipeline for type 1 Emulators
+//
+
+{
+    low: {
+        import: {
+            "em-type1": readstring('./low_import.sfjt'),
+        },
+    },
+
+    high: {
+        import: {
+            "em-type1": readstring('./high_import.sfjt'),
+        },
+    },
+}

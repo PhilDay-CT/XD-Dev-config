@@ -1,0 +1,159 @@
+//
+// Chirpstack Device Profile Template
+//
+
+{
+    /////////////////////////////
+    //
+    // General
+    //
+    /////////////////////////////
+
+    description: "" where isString($),
+    tags: {} where isObj($),
+
+    // RF region name.
+    region: "EU868" where isString($) && includes($, [
+        "AS932", "AU915",
+        "CN470", "CN779",
+        "EU433", "EU868",
+        "IN865",
+        "KR920",
+        "RU864",
+        "US915",
+        ]),
+
+    // By selecting a region configuration, the device will only work within the
+    // selected region configuration. If left blank, the device will work under all
+    // region configurations of the selected region.
+    regionConfigId: "" where isString($),
+
+    // The LoRaWAN MAC version supported by the device.
+    macVersion: "1.1.0" where isString($) && includes($, [
+        "1.0.0", "1.0.1", "1.0.2", "1.0.3", "1.0.4", "1.1.0"]),
+
+    // Revision of the Regional Parameters specification supported by the device.
+    regParamsRevision: "A" where isString($) && includes($, [
+        "A", "B", "RP002-1.0.0", "RP002-1.0.1", "RP002-1.0.2", "RP002-1.0.3"]),
+
+    // The ADR algorithm that will be used for controlling the device data-rate.
+    // In case this is left blank, or is configured to a non-existing ADR
+    // algorithm (plugin), then it falls back to 'default'.
+    adrAlgorithmId: "default" where  isString($) && includes($, [
+        "default",   // Default ADR algorithm (LoRa only)
+        "lr_fhss",       // LR-FHSS only ADR algorithm
+        "lora_lr_fhss"   // LoRa & LR-FHSS ADR algorithm
+    ]),
+
+    // If enabled, the device-queue will be flushed on ABP or OTAA activation.
+    flushQueueOnActivate: true,
+
+    // The expected interval in seconds in which the device sends uplink messages.
+    // This is used to determine if a device is active or inactive.
+    // Uplink interval.
+    uplinkInterval: 300 where isInteger($),
+
+    // If enabled (and if roaming is configured on the server), this allows the
+    // device to use roaming.
+    allowRoaming: false where isBoolean($),
+
+    // Frequency to initiate an End-Device status request (request/day).
+    // Set to 0 to disable.
+    deviceStatusReqInterval: 4 where isInteger($),
+
+    /////////////////////////////
+    //
+    // Join (OTAA/ABP)
+    //
+    /////////////////////////////
+
+    // End-Device supports Join (OTAA) or not (ABP).
+    supportsOtaa: true where isBoolean($),
+
+    // ABP Values - These must match the values for the
+    // device.  Please refer to the device documentation.
+
+    // RX1 delay of the device.
+    // Please refer to the device documentation.
+    abpRx1Delay: 0 where isInteger($),
+
+    // RX1 data-rate offset of the device.
+    abpRx1DrOffset: 0 where isInteger($),
+
+    // RX2 data-rate
+    abpRx2Dr: 0 where isInteger($),
+
+    // RX2 frequency (Hz)
+    abpRx2Freq: 0 where isInteger($),
+
+    /////////////////////////////
+    //
+    // Class B
+    //
+    // If supported the classB settings
+    // must match the device documentaion
+    //
+    /////////////////////////////
+
+    // End-Device supports Class B.
+    supportsClassB: false where isBoolean($),
+
+    // Timeout (in seconds) for confirmed downlink transmissions.
+    classBTimeout: 0 where isInteger($),
+
+    // The ping-slot periodicity in seconds
+    classBPingSlotNbK: 1 where isInteger($) && includes($, [
+        1, 2, 4, 8, 16, 32, 64, 128]),
+
+    // The ping-slot data-rate of the device.
+    classBPingSlotDr: 0 where isInteger($),
+
+    // The ping-slot frequency (Hz)
+    classBPingSlotFreq: 0 where isInteger($),
+
+    /////////////////////////////
+    //
+    // Class C
+    //
+    // If supported the classC settings
+    // must match the device documentaion
+    //
+    /////////////////////////////
+
+    supportsClassC: false where isBoolean($),
+
+    // Maximum delay in seconds for the Device to answer
+    // a MAC request or a confirmed DL frame
+    classCTimeout: 0 where isInteger($),
+
+    /////////////////////////////
+    //
+    // Codec
+    //
+    /////////////////////////////
+
+    // Payload codec type
+    payloadCodecRuntime: "NONE" where isString($) && includes($, ["NONE", "JS", "CAYENNE_LPP"]),
+
+    // Payload Codec Script - must implement two methods
+    //
+    // function decodeUplink(input)
+    //    where input is an object with the following fields
+    //    - bytes = Byte array containing the uplink payload, e.g. [255, 230, 255, 0]
+    //    - fPort = Uplink fPort.
+    //    - variables = Object containing the configured device variables.
+    //
+    //   must return an object with the following fields
+    //   - data = Object representing the decoded payload.
+    //
+    // function encodeDownlink(input)
+    //    where input is an object with the following fields
+    //    - data = Object representing the payload that must be encoded.
+    //    - variables = Object containing the configured device variables.
+    //
+    //    must return an object with the following fields
+    //   - bytes = Byte array containing the downlink payload.
+    //
+    payloadCodecScript: "",
+
+}

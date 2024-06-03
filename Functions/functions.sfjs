@@ -1,0 +1,14 @@
+//sfSig:{"sig": "3045022049093c9b9bf97e13236aa5eb12fe0a0cc6193f98e5c833b87369ae8e16761940022100fc9455896313fdf9c04ce55b459f94e36a27bed06f7560441727139058c70fcd", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDIyMjE0MzY0NVoXDTM0MDIxOTE0MzY0NVowYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABBtlQ44ZT56C6B4w8g/ST1LYwiC0Voi8iGwIksSkv3j+w1Fb1rDD5Pul$!$/WfJekUtRU+Hv6svK+Kw8tNd+mPaUQGjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUK5Rz$!$Nx8dQL+4RYCYHFciTzHJqQcwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBTHZRBCaYoYpdOOBV0ViNYQAtWByDAKBggqhkjOPQQDAgNIADBF$!$AiBGAP9R3wVtkdN7BPp08oPEgNZ8HtF5KBcSXx8mQZ++OAIhAK6nNQBk8pGLHI4w$!$z++I5qm08c3pkVkepTDA8EzVxbpx$!$-----END CERTIFICATE-----$!$", "description": "Functions/functions.sfjs signed by ct-admin", "timestamp":"1708680252344", "timelimit":"0"}
+//sfTimestamp:1708680252344
+//sfLabel:Functions/functions.sfjs
+{
+
+    // Diver a message to the Alert stream 
+    SendAlert: readstring('./SendAlert.jsonata'),
+
+    // Get Metrics from a LoRa Frame - JSON
+    GetLoRaValues: readstring('./GetLoraValues.jsonata'),
+
+    // Get Metrics from a LoRa Frame - Array
+    GetLoRaArrayValues: readstring('./GetLoraArrayValues.jsonata'),
+}

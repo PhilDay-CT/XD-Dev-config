@@ -1,0 +1,19 @@
+
+// Device profile for nke watteco Bob Vibration Monitor
+// https://www.watteco.com/product/bob-assistant-lorawan/
+
+let
+   DEVICE_PROFILE: require('../../../Templates/deviceProfile.sfjt'),
+in
+{
+    deviceProfiles: {
+        "Watteco-Bob": $DEVICE_PROFILE << {
+            macVersion: "1.0.2",
+            regParamsRevision: B,
+            supportsOtaa: true,
+            payloadCodecRuntime: "JS",
+            payloadCodecScript: readstring('./Codec.js'),
+            uplinkInterval: 10800,
+        }
+    }
+}

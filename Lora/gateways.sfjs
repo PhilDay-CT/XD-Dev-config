@@ -1,0 +1,34 @@
+
+//
+// LoRaWAN Gateways
+//
+// Each system must have at least one Gateway 
+//
+
+
+let
+
+    GATEWAY: require('./Templates/gateway.sfjt'),
+        
+in
+{
+
+    // Definition of a LoRaWAN Gateway for Chirpstack
+
+    gateways: {
+        Inkpen: $GATEWAY << {
+            gatewayId: "abcdebfffe6169e7",
+            protocol: MQTT,
+            commonName: "middle.of.nowhere",
+            region: 'eu868',
+            description: "LITE Gateway",
+            location: {
+                "latitude": 51.511396,
+                "longitude": -0.591659,
+                "altitude": 100,
+                "accuracy": 10,
+                "source": "CONFIG",
+            }
+        }
+    }
+}

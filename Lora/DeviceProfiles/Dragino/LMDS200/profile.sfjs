@@ -1,0 +1,21 @@
+
+//
+// Device Profile for Dragino LMDS200
+// https://www.dragino.com/products/distance-level-sensor/item/197-lmds200.html
+let
+   DEVICE_PROFILE: require('../../../Templates/deviceProfile.sfjt'),
+in
+{
+    deviceProfiles: {
+        "Dragino-LMDS200": $DEVICE_PROFILE << {
+            macVersion: "1.0.3",
+            regParamsRevision: "B",
+            supportsOtaa: true,
+            supportsClassB: false,
+            supportsClassC: false,
+            payloadCodecRuntime: "JS",
+            payloadDecoderScript: readstring('./Codec.js'),
+            uplinkInterval: 3600
+        }
+    }
+}

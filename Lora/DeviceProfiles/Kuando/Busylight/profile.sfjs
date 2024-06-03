@@ -1,0 +1,20 @@
+// Device profile for Plenom kuando busylight
+// https://www.plenom.com/products/kuando-busylight-iot-lorawan/
+
+let
+   DEVICE_PROFILE: require('../../../Templates/deviceProfile.sfjt'),
+in
+
+{
+    deviceProfiles: {
+        "Kuando-Busylight": $DEVICE_PROFILE << {
+            macVersion: "1.0.3",
+            supportsOtaa: true,
+            payloadCodecRuntime: "JS",
+            payloadCodecScript: readstring('./Codec.js'),
+            uplinkInterval: 30,
+            supportsClassC: true,
+            classCTimeout: 3,
+        }
+    }
+}

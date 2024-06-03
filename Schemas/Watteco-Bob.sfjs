@@ -1,0 +1,58 @@
+let 
+    LORA_DEVICE: require('./Templates/lora.sfjt')
+in
+{
+    mqtt: {
+
+        //
+        // Sensor Schema for Watteco BoB
+        //
+        "lora/**/Watteco-Bob/1/**": ($LORA_DEVICE << {
+            payload: {
+                type: object,
+                properties: {
+                    data: {
+                        type: array,
+                        items : [
+                            {   
+                                type: object,
+                                properties: {
+                                    date:  {type: string},
+                                    label: {type: string},
+                                    value: {type: number}
+                                },
+                                required: [date, label, value],
+                                additionalProperties: false            
+                            }
+                        ],
+                    },
+                    fft: {
+                        type: array,
+                        items : [
+                            {   
+                                type: object,
+                                properties: {
+                                    date:  {type: string},
+                                    label: {type: string},
+                                    value: {type: number}
+                                },
+                                required: [date, label, value],
+                                additionalProperties: false            
+                            }
+                        ],
+                    },
+                    header: {
+                        type: object,
+                        properties: {
+                            sensor: {type: string, const:'KX'},
+                            type:   {type: string, maxlength:20}
+                        }
+                    }
+                },   
+                additionalProperties: false,
+                required: [data, header] 
+            }   
+        }).schema,
+
+    }
+}

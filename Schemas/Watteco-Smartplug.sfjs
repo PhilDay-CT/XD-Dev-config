@@ -1,0 +1,43 @@
+let 
+    LORA_DEVICE: require('./Templates/lora.sfjt')
+in
+{
+    mqtt: {
+
+        //
+        // Sensor Schema for Watteco Smart Plus
+        //
+        "lora/**/Watteco-Smartplug/125/**": ($LORA_DEVICE << {
+            payload: {
+                type: object,
+                properties: {
+                    data: {
+                        type: array,
+                        items : [
+                            {   
+                                type: object,
+                                properties: {
+                                    date:  {type: string},
+                                    label: {type: string},
+                                    value: {type: integer}
+                                },
+                                required: [date, label, value],
+                                additionalProperties: false            
+                            }
+                        ],
+                    },
+                    zclheader: {
+                        type: object,
+                        properties: {
+                            report: {type: string}
+                        },
+                        additionalProperties: false,
+                        required: [report] 
+                    },
+                },   
+                additionalProperties: false,
+                required: [data, zclheader] 
+            }   
+        }).schema,
+    }
+}

@@ -1,0 +1,30 @@
+
+//
+// Example Telemetry Pipeline for Lora Sensors - Low
+//
+
+let
+    TEMPLATE_DIR: env(CT_HOME) + '/templates/',
+
+    // Templates configured for this domain
+    MQTT_RECEIVER: require($TEMPLATE_DIR + 'MQTT_Receiver.sfjs'),
+    XD_SENDER:     require($TEMPLATE_DIR + 'XD_Sender.sfjs'),
+
+in
+{
+
+    MQTT: $MQTT_RECEIVER << {
+        topics: [
+            'lora/ctxd/app1/Elsys/5/#',
+            'lora/ctxd/app1/Busylight/15/#'
+        ],
+        format: 'json',
+        targets: {
+            default: Sender,
+        },
+    },
+
+    Sender: $XD_SENDER << {
+        id: 'lora',
+    },
+}

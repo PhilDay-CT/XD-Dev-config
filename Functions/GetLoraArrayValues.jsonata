@@ -1,0 +1,60 @@
+
+/* General function to get telemery values in array form  */
+/* into a set of data structures that can be sent to      */
+/* Thingsboard.   Also adds flattened toxicity values     */
+/* and gateway metadata                                   */
+/*                                                        */
+/* Incomming data should be in the following array format */
+/* (as used for example by Watteco devices)               */
+/*                                                        */
+/*    data.object.data: [                                 */
+/*        {                                               */
+/*            date:  <ISO data string>,                   */
+/*            label: <string>,                            */
+/*            value: <value>                              */
+/*        },                                              */
+/*        {...}                                           */
+/*    ]                                                   */
+/*                                                        */
+/* Each entry in the data becomes a new value sent to TB  */
+/*                                                        */
+(
+    $ts := (input.data.ts)?input.data.ts:input.ts;
+    $devID := input.data.deviceInfo.devEui;
+
+    /* Get the signal metadata from each gatway */
+    $gw_meta := input.data.rxInfo.{
+        $join(["gateway","rssi",name], '.'): rssi,
+        $join(["gateway","loRaSNR", name], '.'): loRaSNR
+    }~>$merge;
+
+    /* Build a flattend set of toxicity values */
+    $tox := $each(input.toxicity, function ($v,$k) {
+            ($v.toxic or $v.toxic = 0)?{
+                $join(["toxicity", $k], '.'): $v.toxic
+            }:$each($v, function($vv, $vk) {
+                  {$join(["toxicity", $k, $vk], '.'): $vv.toxic}
+            })~>$merge  
+    })~>$merge;
+
+    /* Create an array of output messages */
+    $values := input.data.object.data.{
+        "devId": $devID,
+        "data": {
+            "ts": $toMillis(date),
+            "values": $merge([
+                {label: value},
+                $tox,
+                $gw_meta,
+                {"fCnt": $$.input.data.fCnt},
+                {"tx.frequency": $$.input.data.txInfo.frequency},
+                {"tx.dataRate":  $$.input.data.txInfo.dr},
+                {"toxicity": $$.input.toxicity}
+            ])
+        }
+    };
+
+    {
+        "outputs": {"default": $values}
+    }
+)

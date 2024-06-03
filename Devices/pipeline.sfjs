@@ -1,0 +1,12 @@
+
+
+//
+// Device info for pileline metrics
+//
+
+{
+    pipeline: {
+        // ThingsBoard: {token: "<<ThingsBoardToken>>"}
+    },
+    
+}

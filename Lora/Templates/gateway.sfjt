@@ -1,0 +1,34 @@
+//
+// Chirpstack Gateway Template
+//
+
+{
+    // Gateway ID (HEX encoded).
+    gatewayId: _ where isString($),
+
+    description: "" where isString($),
+    tags: {} where isObj($),
+
+    // LoRaWAn region for the gateway
+    region: eu868,
+
+    protocol: "MQTT" where isString($) && includes($, [
+            "MQTT",
+            "BasicStation"]),
+    },
+
+    // The expected interval in seconds in which the gateway sends its statistics
+    statsInterval: 30 where isInteger($),
+
+    // Gateway location.
+    location: {
+        latitude: 0 where isNumber($),
+        longitude: 0 where isNumber($),
+        altitude: 0 where isNumber($),
+        accuracy: 0 where isNumber($),
+        source: "UNKNOWN" where isString($) && includes($, [
+            "UNKNOWN",
+            "GPS", "CONFIG", "GEO_RESOLVER_TDOA", "GEO_RESOLVER_RSSI", "GEO_RESOLVER_GNSS", "GEO_RESOLVER_WIFI"]),
+    },
+
+}

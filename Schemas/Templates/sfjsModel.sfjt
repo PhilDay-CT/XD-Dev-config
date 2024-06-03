@@ -1,0 +1,38 @@
+
+//
+// General template for an SFSJ model message.  Extend by
+// defining the model element and then using .schema
+//
+// For example:
+//
+// let
+//     SFJS_MODEL: require('./Templates/sfjsModel.sfjt')
+// in
+// {   
+//    myMM: ($SFJS_MODEL << {
+//        model:  <scheme for the model>
+//    }).schema 
+//
+{
+    model: {},
+    schema: {
+        type: object,
+        required: ['kind', 'metadata', 'data'],
+        additionalProperties: false,
+        properties: {
+            kind: {type: string, const: 'sfjs'},
+            metadata: {
+                type: object,
+                required: ['mmName', 'deltaName', 'timestamp'],
+                additionalProperties: false,
+                properties: {
+                    mmName:     {type: string, maxlength: 100},
+                    deltaName:  {type: string, maxlength: 100},
+                    timestamp:  {type: integer},
+                },    
+            },
+            data: @model,
+            trace: require('./Templates/Trace.sfjt')
+        } 
+    }
+}

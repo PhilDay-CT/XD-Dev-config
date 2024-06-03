@@ -1,0 +1,28 @@
+
+//
+// Schema definition for an sfjsAck message 
+//
+
+{
+    other: {
+        sfjsAck : {
+            type: object,
+            required: ['kind', 'metadata'],
+            additionalProperties: false,
+            properties: {
+                kind: {type: string, const: 'sfjsAck'},
+                metadata: {
+                    type: object,
+                    additionalProperties: false,
+                    properties: {
+                        mmName:    {type: string, maxLength:1000},
+                        deltaName: {type: string, maxLength:1000},
+                        from:      {type: string, maxLength:1000},
+                        timestamp: {type: integer},
+                    },
+                },
+                trace: require('./Templates/Trace.sfjt')
+            },
+        }
+    }
+}

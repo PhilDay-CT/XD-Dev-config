@@ -1,0 +1,32 @@
+let 
+    LORA_DEVICE: require('./Templates/lora.sfjt')
+in
+{
+    mqtt: {
+
+        //
+        // Sensor Schema for Drageno LMDS200
+        //
+        "lora/**/DraginoLMDS200/2/**": ($LORA_DEVICE << {
+            payload: {
+                type: object,
+                properties: {
+                    data: {
+                        type: object,
+                        properties : {
+                            Bat:             {type: number,  minimum: 0, maximum: 4.0},
+                            DALARM_count:    {type: integer, minimum: 0},
+                            Distance_alarm:  {type: integer, minimum: 0, maximum: 1},
+                            Interrupt_alarm: {type: integer, minimum: 0, maximum: 1},
+                            dis1:            {type: integer, minimum: 0, maximum: 2500},
+                            dis2:            {type: integer, minimum: 0, maximum: 2500},
+                        },
+                        additionalProperties: false,
+                    },
+                    required: [data]
+                } 
+            }   
+        }).schema
+
+    }
+}

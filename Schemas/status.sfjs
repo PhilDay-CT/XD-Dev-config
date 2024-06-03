@@ -1,0 +1,119 @@
+
+//
+// Schema Definition for a Status message
+//
+
+let
+    SFJS_MODEL: require('./Templates/sfjsModel.sfjt'),
+
+    //
+    // Low side PROCESS Status
+    //
+    LOW_PROCESSES: {
+        type: 'object',
+        properties: {
+          	_legend: {type: 'object'},
+            _kind:   {type: 'string', const: 'Process'},
+        },
+        patternProperties: {
+           "^low_": {type: 'object'}
+        },
+        additionalProperties: false,
+    },
+
+    //
+    // Low side Component Status
+    //
+    LOW_COMPONENTS: {
+        type: 'object',
+        properties: {
+            _legend: {type: 'object'},
+            _kind:   {type: 'string', const: 'Component'},
+        },
+        patternProperties: {
+           "^low_": {type: 'object'}
+        },
+        additionalProperties: false,
+    },
+
+    //
+    // Low side Pipeline Status
+    //
+    LOW_PIPELINE_STATUS: {
+        type: 'object',
+        properties: {
+            details: {
+                type: 'object',
+                properties: {
+                    pipeline: {type: 'string'},
+                    group: {type: 'string'},
+                    domain: {type: 'string'},
+                    node: {type: 'array', items:{type: 'string'}},
+                    timeout: {type: 'integer'}
+                },
+                additionalProperties: false,
+            },
+            status: {type: 'string'},
+        },
+        additionalProperties: false,    
+        required: ['status']
+    },
+
+    LOW_PIPELINES: {
+        type: 'object',
+        properties: {
+            _legend: {type: 'object'},
+            _kind:   {type: 'string', const: 'Pipeline'},
+        },
+        patternProperties: {
+           "^Import$|^Export$|^System$|^Other$": {
+                type: 'object',
+                patternProperties: {
+                    "^[a-zA-Z0-9\\-\\_\\ \\(\\)]*$": {
+                        type: 'object',
+                        patternProperties: {
+                            "^Receiver:.*$|^Sender:.*": $LOW_PIPELINE_STATUS
+                        },
+                        additionalProperties: false,
+                    },
+                },
+                additionalProperties: false,
+            }
+        },
+        additionalProperties: false,
+    }  
+
+in
+{
+    sfjs: {
+
+        // Low Side status model
+        status : ($SFJS_MODEL << {
+            model: {
+                type: object,
+                required: [system],
+                additionalProperties: false,
+                properties: {
+                    system: {
+                        type: object,
+                        required: [status],
+                        additionalProperties: false,
+                        properties: {
+                            status: {
+                                type: object,
+                                additionalProperties: false,
+                                properties: {
+                                    Components: $LOW_COMPONENTS,
+                                    Processes:  $LOW_PROCESSES,
+                                    Pipelines:  $LOW_PIPELINES,
+                                    Emulators: {type: object},
+                                    Lora: {type: object}
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+        }).schema,
+    }
+}

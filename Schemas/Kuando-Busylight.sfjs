@@ -1,0 +1,40 @@
+let 
+    LORA_DEVICE: require('./Templates/lora.sfjt')
+in
+{
+    mqtt: {
+
+        //
+        // Sensor Schema for Plenom Busy Light
+        //
+        "lora/**/Kuando-Busylight/15/**": ($LORA_DEVICE << {
+            payload: {
+                type: object,
+                properties: {
+                    data: {
+                        type: object,
+                        properties : {
+                            RSSI:              {type: integer, minimum: -100, maximum: 100},
+                            SNR:               {type: integer, minimum: 0,    maximum: 100},
+                            adr_state:         {type: integer, minimum: 0,    maximum: 1},
+                            hw_rev:            {type: integer, const: 12},
+                            sw_rev:            {type: integer, const: 43},
+                            lastcolor_red:     {type: integer, minimum: 0,    maximum: 255},
+                            lastcolor_green:   {type: integer, minimum: 0,    maximum: 255},
+                            lastcolor_blue:    {type: integer, minimum: 0,    maximum: 255},
+                            lastcolor_ontime:  {type: integer},
+                            lastcolor_offtime: {type: integer},
+                            messages_received: {type: integer, minimum: 0},
+                            messages_send:     {type: integer, minimum: 0},
+                        },
+                        additionalProperties: false,
+                    },
+                    warnings: {type: array},
+                    errors:   {type: array},
+                    required: [data, warnings, errors]
+                }
+            }
+        }).schema
+        
+    }
+}

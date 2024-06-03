@@ -1,0 +1,38 @@
+let 
+    LORA_DEVICE: require('./Templates/lora.sfjt')
+in
+{
+    mqtt: {
+
+        //
+        // Sensor Schema for Elsys EMS
+        //
+        "lora/**/Elsys/5/**": ($LORA_DEVICE << {
+            payload: {
+                type: object,
+                properties: {
+                    data: {
+                        type: object,
+                        properties : {
+                            accMotion:   {type: number,  minimum: 0,    maximun: 255},
+                            battery:     {type: integer, minimum: 0,    maximum: 65535},
+                            digital:     {type: integer, minimum: 0,    maximum: 1},
+                            humidity:    {type: integer, minimum: 0,    maximum: 100},
+                            pulse1:      {type: integer, minimum: 0,    maximum: 65535},
+                            temperature: {type: number,  minimum: -20,  maximum: 120},
+                            waterleak:   {type: integer, minimum: 0,    maximum: 255},
+                            light:       {type: integer, minimum: 0,    maximum: 65535},
+                            motion:      {type: integer, minimum: 0,    maximum: 255},
+                            x:           {type: integer, minimum: -127, maximum: 127},
+                            y:           {type: integer, minimum: -127, maximum: 127},
+                            z:           {type: integer, minimum: -127, maximum: 127},
+                        },
+                        additionalProperties: false,
+                    },
+                    required: [data]
+                }
+            }
+        }).schema
+        
+    }
+}

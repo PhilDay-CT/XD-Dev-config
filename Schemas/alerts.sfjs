@@ -1,0 +1,48 @@
+
+//
+// Schema for Alert messages
+//
+
+let
+
+    ALERT: {
+        type: object,
+        required: ['kind', 'alert'],
+        additionalProperties: false,
+        properties: { 
+            kind: {type: string, const: 'alert'},
+            alert: {
+                type: object,
+                additionalProperties: false,
+                properties: {
+                    type:    {type: string},
+                    origin:  {type: string, maxLength:1000},
+                    msg:     {type: string, maxLength:1000},
+                    details: {
+                        type: [string,array,object],
+                        maxLength: 5000,
+                        maxItems: 50,
+                        maxProperties: 50 
+                    },
+                },
+            },
+            trace: require('./Templates/Trace.sfjt')
+        },
+    },
+
+    ALERT_WITH_DATA: $ALERT << {
+        properties: {
+            data: {type: object}
+        }    
+    }
+
+
+in
+{
+    alert: {
+        '*':           $ALERT,
+        'SislError':   $ALERT_WITH_DATA,
+        'SchemaError': $ALERT_WITH_DATA,
+    }
+
+}

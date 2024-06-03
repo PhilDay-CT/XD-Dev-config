@@ -1,0 +1,58 @@
+
+//
+// Telemetry Pipeline for type 1 Emulators - High
+//
+
+let
+    SRC_DIR: env(CT_HOME) + '/src/',
+    TEMPLATE_DIR: env(CT_HOME) + '/templates/',
+
+    // Templates configured for this domain
+    XD_RECEIVER:       require($TEMPLATE_DIR + 'XD_Receiver.sfjs'),
+    SCHEMA_CHECKER:    require($TEMPLATE_DIR + 'Schema_Checker.sfjs'),
+    FUNCTION:          require($TEMPLATE_DIR + 'Jsonata.sfjs'),
+    MQTT_SENDER:       require($TEMPLATE_DIR + 'MQTT_Sender.sfjs'),
+    TB_SENDER:         require($TEMPLATE_DIR + 'ThingsBoard_Sender.sfjs'),
+    STATS:             require($TEMPLATE_DIR + 'Pipeline_Stats.sfjs'),
+
+in
+{
+
+    Receiver: $XD_RECEIVER << {
+        id: 'em-type1',
+        targets: {
+            default: SchemaCheck,
+        },
+    },
+
+    SchemaCheck: $SCHEMA_CHECKER << {
+        targets:   {default: [MQTT, ThingsBoard]},
+    },
+
+    // Sent to MQTT
+    MQTT: $MQTT_SENDER << {
+        format: 'json',
+        targets: {stats: Stats},
+    },
+
+    // Get Lora Values as metrics for Thingsboard
+    ThingsBoard: $FUNCTION << {
+        functions: {default: {name: GetLoRaValues, operation: replace}},
+        targets:   {default: ThingsBoardSender},
+    },
+    
+    // Sent to Thingboard
+    ThingsBoardSender: $TB_SENDER,
+
+    // Generate Stats for the Pipeline
+    Stats: $STATS << {
+        devId: 'pipeline',
+        targets:   {
+            default: ThingsBoardSender
+        },
+    },
+
+    
+    
+
+}

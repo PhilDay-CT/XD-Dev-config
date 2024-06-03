@@ -1,0 +1,108 @@
+
+//
+// Schema for a gitFiles message
+//
+
+let
+    FILE_NAME: '^[a-zA-Z0-9\\-\\_\\.]*$',
+    HEX: '^[A-Fa-f0-9]*$',
+
+    // Pattern for the hash of a file
+    GIT_SHA1: {
+        type: string,
+        pattern: $HEX, 
+        maxLength: 40,
+        minLength: 40,
+    },
+
+    AUTHOR: {
+        type: object,
+        additionalProperties: false,
+        properties: {
+            name: {type: string},
+            email: {type: string},
+            timestamp: {type: integer},
+            timezoneOffset: {type: integer}
+        },
+        required: [name, email]
+    },
+
+    COMMIT: {
+        type: object,
+        additionalProperties: false,
+        properties: {
+            message: {type: string},
+            oid: $GIT_SHA1,
+            author: $AUTHOR
+        },
+        required: [message, oid, author]
+    },
+    
+    METADATA: {
+        type: object,
+        additionalProperties: false,
+        properties: {
+            commit: $COMMIT
+        },
+        required: [commit]
+    },
+
+    FILE_MODE: {
+        type: string, 
+        pattern: '[0-7]', 
+        maxLength:3,
+        minLength: 3
+    },
+
+    FILE_CONTENT :{
+        type: string
+    },
+
+    FILE_UPDATE: {
+        type: object,
+        additionalProperties: false,
+        properties: {
+            content: $FILE_CONTENT,
+            mode: $FILE_MODE
+        },
+        required: [content, mode]
+    },
+
+    FILE_UPDATES: {
+        type: object,
+        additionalProperties: false,
+        properties: {
+            update: {
+                type: object,
+                patternProperties: {
+                    $FILE_NAME: $FILE_UPDATE
+                },
+                additionalProperties: false,
+            },
+            delete: {
+                type: array,
+                items: {
+                    type: string,
+                    pattern: $FILE_NAME
+                }
+            }
+        },
+        required: [update, delete]
+    }
+
+in
+{
+    other: {
+        gitfiles: {
+            type: object,
+            additionalProperties: false,
+            properties: {
+                kind: {type: string, const: 'gitfiles'},
+                metadata: $METADATA,
+                data: $FILE_UPDATES,
+                trace: require('./Templates/Trace.sfjt')
+            },
+            required: [kind, metadata, data]
+        }
+    }
+}

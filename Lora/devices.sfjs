@@ -1,0 +1,55 @@
+
+//
+// An example of defining Lora Devices, in this case an
+// ELSYS ERS sensors
+//
+
+let
+
+    DEVICE: require('./Templates/device.sfjt'),
+    
+    //
+    // Common aspects of an Elsys ERS device in Application App1
+    //
+    ERS_DEVICE: $DEVICE << {
+        "application":   "App1",
+        "deviceProfile": "Elsys",    
+        "skipFCntCheck": true,
+        // Settings to send to the Device
+        settings: {
+            fPort: 6,
+            values: {
+                SplPer: 100, 
+                TempPer: 3,
+                External: 23
+            }
+        }
+
+    },
+
+    
+in
+{
+    devices: {
+        ERS_1: $ERS_DEVICE << {
+            "description":   "Elsys ERS 1",
+            "devEUI":        "A81758FFFE042F02",
+            "keys": {
+                "nwkKey": "2b7e151628aed2a6abf7158809cf4f3c"
+            },
+            tags: {
+                "Model":  "ERS RevF"
+            },
+        },
+
+        ERS_2: $ERS_DEVICE << {
+            "description":   "Elsys ERS 2",
+            "devEUI":        "A81758FFFE06B00F",
+            "keys": {
+                "nwkKey": "2b7e151628aed2a6abf7158874568902"
+            },
+            isDisabled: true
+        },
+
+    }
+}

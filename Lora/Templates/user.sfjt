@@ -1,0 +1,17 @@
+//
+// Chirpstack User Template
+//
+// Note the CT interface only allows non admin users scoped to a single
+// tenant.   Admin rights are not required as all configuration
+// is via the model
+
+{
+    // Password of the user.
+    password: _ where isString($),
+
+    // Is the user Active
+    isActive: true,
+
+    // Optional Note
+    note: "" where isString($),
+}

@@ -1,0 +1,15 @@
+let
+   DEVICE_PROFILE: require('../../../Templates/deviceProfile.sfjt'),
+in
+
+{
+    deviceProfiles: {
+        "Parametric-PCR2": $DEVICE_PROFILE << {
+            macVersion: "1.0.3",
+            regParamsRevision: 'A',
+            supportsOtaa: true,
+            payloadCodecRuntime: "JS",
+            payloadCodecScript: readstring('./Codec.js'),
+        }
+    }
+}

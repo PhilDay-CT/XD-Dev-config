@@ -1,0 +1,195 @@
+
+//
+// Definition of a collection LoRaWan sensor Emulators.
+// Note: To enable a sensor edit control.sfjt - This file
+// only needs to be changed if you want to change the behaviour
+// of an emulator
+//
+
+let
+
+    LORA: require('./Templates/LoRaWAN.sfjt'),
+
+    // Base definition of device types
+    EMULATOR_APP_1: $LORA.LoraDevice << {
+        base: {
+            data: {
+                deviceInfo: {
+                    applicationId:   "uuid()",
+                    applicationName: "EmApp1",
+                },
+            },
+        },
+        topicPrefix: "lora/em1/",
+        topic: @topicPrefix+@base.data.deviceInfo.deviceProfileName+'/'+stringify(@base.data.fPort)+'/'+@base.data.deviceInfo.deviceName,
+    },
+
+    // Definition of a Device Type
+    DEVICE_TYPE_1: $EMULATOR_APP_1 << {
+        base: {
+            data: {
+                deviceInfo: {
+                    deviceProfileName: "EmType1",
+                    deviceProfileId: "ffff0000-1111-2222-3333-468e9a0c8ded",
+                    deviceName: @name,
+                    devEui:     @EUI,
+                },
+                fCnt: "@emulator.epoch", 
+                fPort: 5,
+                rxInfo: [
+                    $LORA.Gateway1,
+                    $LORA.Gateway2
+                ],
+                data: 'Base64data',
+                object: {
+                    data: {
+                        temperature: "@values.temperature + (floor(10*random())/10)",
+                        battery:     "@values.battery - (@emulator.epoch * 0.1)", 
+                        light:       "@values.light + random(false, -30, 30)",
+                        motion:      "random(false, 0, 10)",
+                    },
+                },
+            },
+            values: {
+                temperature: 18.0,
+                battery: 3600,
+                light: 100,
+            },
+            count: 0,
+            interval: 5000,
+        },
+        enabled: true,
+    },
+
+    DEVICE_TYPE_2: $EMULATOR_APP_1 << {
+
+        base: {
+            data: {
+                deviceInfo: {
+                    deviceProfileName: "EmType2",
+                    deviceProfileId: "ffff0000-1111-2222-3333-468e9a0c8dff",
+                    deviceName: @name,
+                    devEui:     @EUI,
+                },
+                fCnt: "@emulator.epoch", 
+                fPort: 5,
+                rxInfo: [
+                    $LORA.Gateway1,
+                    $LORA.Gateway2
+                ],
+                data: 'Base64data',
+                object: {
+                    data: [
+                        {date: "timedate_format('YYYY-MM-DDTHH:MM:ss.sss')+'Z'", label: temperature, value: "@values.temperature + (floor(10*random())/10)"},
+                        {date: "timedate_format('YYYY-MM-DDTHH:MM:ss.sss')+'Z'", label: battery, value: "@values.battery - (@emulator.epoch * 0.1)"},                
+                    ]
+                },
+            },
+            values: {
+                temperature: 18.0,
+                battery: 3600,
+            },
+            count: 0,
+            interval: 5000,
+        },
+        enabled: true,
+    },
+
+    //
+    // Enabled state of emulators is defined in control.sfjt 
+    //
+    Emulators: require('./control.sfjt')
+
+in
+{
+    // Emulated Devices
+
+    // Continually sends data with small random offsets
+    emdev1:  $DEVICE_TYPE_1 << {
+        name: "EmDev1",
+        EUI:  "deadbeef00000001",
+        enabled: $Emulators.emdev1,
+        sequence: [@base],
+    },
+
+    emdev2:  $DEVICE_TYPE_1 << {
+        name: "EmDev2",
+        EUI:  "deadbeef00000002",
+        enabled: $Emulators.emdev2,
+        sequence: [@base],
+    },
+
+    emdev3:  $DEVICE_TYPE_1 << {
+        name: "EmDev3",
+        EUI:  "deadbeef00000003",
+        enabled: $Emulators.emdev3,
+        sequence: [@base],
+    },
+
+    // Device with a temperature jump after 10 frames
+    emdev4:  $DEVICE_TYPE_1 << {
+        name: "EmDev4",
+        EUI:  "deadbeef00000004",
+        enabled: $Emulators.emdev4,
+        sequence: [
+            @base << {count: 10},
+            @base << {count: 10, values: {temperature: 25.0}},
+        ]
+    },
+
+    // Device with a jump in frame count after 10 frames, resets
+    // after 5 frames
+    emdev5:  $DEVICE_TYPE_1 << {
+        name: "EmDev5",
+        EUI:  "deadbeef00000005",
+        enabled: $Emulators.emdev5,
+        sequence: [
+            @base << {count: 10, data: {fCnt: "@emulator.epoch%15"}},
+            @base << {count: 5,  data: {fCnt: "100 + @emulator.epoch%15"}}
+        ],
+    },
+
+    // Device with a change in frame frequency after 8 frames
+    emdev6:  $DEVICE_TYPE_1 << {
+        name: "EmDev6",
+        EUI:  "deadbeef00000006",
+        enabled: $Emulators.emdev6,
+        sequence: [
+            @base << {count: 8},
+            @base << {count: 10, interval: 1000}
+        ],
+    },
+
+    // Device with a switch to different gateway every 12th frame
+    emdev7:  $DEVICE_TYPE_1 << {
+        name: "EmDev7",
+        EUI:  "deadbeef00000007",
+        enabled: $Emulators.emdev7,
+        sequence: [
+            @base << {count: 11},
+            @base << {count: 1, data: {rxInfo: [$LORA.Gateway3]}}
+        ],
+    },
+
+    // Continually sends data with small random offsets in array format
+    emdev8:  $DEVICE_TYPE_2 << {
+        name: "EmDev8",
+        EUI:  "deadbeef00000008",
+        enabled: $Emulators.emdev8,
+        sequence: [@base],
+    },
+    
+    // Generates a schema error 
+    emdev9:  $DEVICE_TYPE_1 << {
+        name: "EmDev9",
+        EUI:  "deadbeef00000009",
+        enabled: $Emulators.emdev9,
+        sequence: [
+            @base << {interval: 20*1000, data: {object: { data: {badValue: 'opps'}}}}
+        ],
+    },
+    
+
+}
+
+

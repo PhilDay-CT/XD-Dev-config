@@ -1,0 +1,54 @@
+
+/* General function to get telemery values into a form    */
+/* that can be sent to Thingsboard. Also adds flattened   */
+/* toxicity values and gateway metadata                   */
+/*                                                        */
+/* Incomming data should be a JSON object                 */
+/*                                                        */
+/*    data.object.data: {                                 */
+/*            key1: value,                                */
+/*            key2: value,                                */
+/*            ...                                         */
+/*        },                                              */
+/*                                                        */
+(
+    $ts := (input.data.ts)?input.data.ts:input.ts;
+    $devID := input.data.deviceInfo.devEui;
+
+    /* Get the signal metadata from each gatway */
+    $gw_meta := input.data.rxInfo.{
+        $join(["gateway","rssi",name], '.'): rssi,
+        $join(["gateway","loRaSNR", name], '.'): loRaSNR
+    }~>$merge;
+
+    /* Build a flattend set of toxicity values */
+    $tox := $each(input.toxicity, function ($v,$k) {
+            ($v.toxic or $v.toxic = 0)?{
+                $join(["toxicity", $k], '.'): $v.toxic
+            }:$each($v, function($vv, $vk) {
+                  {$join(["toxicity", $k, $vk], '.'): $vv.toxic}
+            })~>$merge  
+    })~>$merge;
+
+    $values := $merge([
+        $each(input.data.object, function($v,$k) {
+            {
+                $k: $v
+            }
+        }),
+        $tox,
+        $gw_meta,
+        {"fCnt": input.data.fCnt},
+        {"tx.frequency": input.data.txInfo.frequency},
+        {"tx.dataRate":  input.data.txInfo.dr},
+        {"toxicity": input.toxicity}
+    ]);
+
+    /* Adjust the data depending on whether */
+    /* we have a Timestamp or not           */
+    $data := ($ts)?{"ts": $ts, "values": $values}:$values; 
+
+    {
+        "outputs": {"default": {"devId": $devID, "data": $data}}
+    }
+)

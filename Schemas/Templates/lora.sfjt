@@ -1,0 +1,184 @@
+
+//
+// Schema for Chirpstack data payload received from MQTT.
+
+let 
+
+    MQTT_DATA: require('./Templates/mqtt.sfjt'),
+
+    //
+    // Schema definition for deviceInfo
+    //
+    LORA_DEVICE_INFO: {
+        type: object,
+        properties: {
+            tenantId: {type: string, format: uuid},
+            tenantName: {type: string},
+            applicationId: {type: string, format: uuid},
+            applicationName: {type: string},
+            deviceProfileId: {type: string, format: uuid},
+            deviceProfileName: {type: string},
+            deviceName: {type: string},
+            devEui: {type: string, maxlength:16},
+            deviceClassEnabled: {type: string},
+            tags: {type: object}
+        },
+        required: [
+            tenantId, tenantName,
+            applicationId, applicationName,
+            deviceProfileId, deviceProfileName,
+            deviceName, devEui,
+            deviceClassEnabled,
+        ],
+        additionalProperties: false            
+    },
+    
+
+    //
+    // Schema definition for the Metadata of a LoRa Gateway
+    // provided in rxinfo
+    //
+    LORA_GATEWAY_INFO: {
+        type: object,
+        properties: {
+            gatewayId: {type: string},
+            uplinkId: {type: number},
+            nsTime: {type: string},
+            rssi: {type: integer},
+            snr: {type: number},
+            channel: {type: number},
+            rfChain: {type: number},
+            location: {
+                type: object,
+                properties: {
+                    latitude: {type: number},
+                    longitude: {type: number},
+                    altitude: {type: integer}
+                },
+                required: [latitude, longitude, altitude]
+            },
+            context: {type: string},
+            metadata: {
+                type: object,
+                properties: {
+                    region_config_id: {type: string},
+                    region_common_name: {type: string},    
+                },
+                required: [region_config_id, region_common_name]
+            },
+            crcStatus: {type: string}
+        },
+        required: [
+            // channel and rfChain seems to be optional
+            gatewayId, uplinkId, nsTime, rssi, snr,
+            location, context, metadata, crcStatus
+        ],
+        additionalProperties: false,         
+    },
+
+    LORA_TX_INFO: {
+        type: object,
+        properties: {
+            frequency: {type: integer},
+            modulation: {
+                type: object,
+                properties: {
+                    lora: {
+                        type: object,
+                        properties: {
+                            bandwidth: {type: integer},
+                            spreadingFactor: {type: integer},
+                            codeRate: {type: string}
+                        },
+                        required: [bandwidth, spreadingFactor, codeRate],
+                        additionalProperties: false,
+                    }
+                },
+                required: [lora],
+                additionalProperties: false,
+            }
+        },
+        required: [frequency, modulation],
+        additionalProperties: false            
+    },
+
+    LORA_DATA: {
+        type: object,
+        properties: {
+            deduplicationId: {type: string, format: uuid},
+            time: {type: string},
+            deviceInfo: $LORA_DEVICE_INFO,
+            rxInfo: {type: array, items: [ $LORA_GATEWAY_INFO ]},
+            txInfo: $LORA_TX_INFO,
+            devAddr: {type: string},
+            adr: {type: boolean},
+            dr: {type: integer},
+            fCnt: {type: integer, minimum: 0,   maximum: 65535},
+            fPort: {type: integer},
+            confirmed: {type: boolean},
+            data: {type: string},
+            object: {type: object},
+            ts: {type: integer}
+        },
+        required: [
+            deduplicationId,
+            time,
+            deviceInfo,
+            rxInfo,
+            txInfo,
+            devAddr,
+            adr,
+            dr,
+            fCnt,
+            fPort,
+            confirmed,
+            data,
+        ],
+        additionalProperties: false            
+    }
+
+in    
+
+    //
+    // Generic schema definition for a LoRa object provided by Chirpstack.  Schemas
+    // for a specific device type should extend this by providing the schema for
+    // their specific payload as the "payload" value and then using the .schema
+    // element
+    //
+    //  let
+    //     LORA_DEVICE: require('./Templates/lora.sfjt')
+    // in
+    // {   
+    //    mySchema: ($LORA_DEVICE << {
+    //        payload: {
+    //            type: object,
+    //            properties : {
+    //                data: {
+    //                    type: object,
+    //                    properties: {  
+    //                        temperature: {type: number,  minimum: -20, maximum: 120},
+    //                        light:       {type: integer, minimum: 0,   maximum: 1000},
+    //                        battery:     {type: integer, minimum: 0,   maximum: 4000},
+    //                        motion:      {type: integer, minimum: 0,   maximum: 100}
+    //                    },
+    //                    required: [temperature, light, battery, motion],
+    //                    additionalProperties: false
+    //                },
+    //            required: [data],
+    //            additionalProperties: false    
+    //        },
+    //    }).schema,
+    //
+    
+    {
+        payload: {},
+        schema: $MQTT_DATA << {  
+            properties: {
+                data: $LORA_DATA << {
+                    properties: {
+                        object: @payload
+                    }
+                },
+            }    
+        }
+    }
