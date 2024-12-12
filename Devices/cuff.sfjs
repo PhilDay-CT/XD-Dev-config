@@ -1,8 +1,4 @@
-let
-    Y : {t: 666}
-in
 {
-    x: require('./puff.json'),
+  x: {token: "a-b-c"}
 }
-
-<< {}
+<< {z: 777}

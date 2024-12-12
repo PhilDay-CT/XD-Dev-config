@@ -2,7 +2,8 @@ let
     Y : {t: 666}
 in
 {
-    x: require('./puff.json'),
+//    x: require('./puff.json'),
+      x: {token: "a-b-6"}
 }
 
 << require('./stuff.sfjs')
