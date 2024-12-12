@@ -3,7 +3,6 @@ let
 in
 {
     x: require('./puff.json'),
-//      x: {token: "a-b-6"}
 }
 
 << require('./stuff.sfjs')
