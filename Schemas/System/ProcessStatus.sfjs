@@ -19,7 +19,7 @@ let
 in
 {
     sfjs: {
-        status: $STATUS << {
+        status: ($STATUS << {
             model: {
                 properties: {
                     system : {
@@ -33,6 +33,6 @@ in
                     }
                 }
             }
-        }.schema
+        })
     }
 }   

@@ -1,31 +1,25 @@
 let
     SFJS_MODEL: require('./Schemas/System/Templates/sfjsModel.sfjt'),
 in
-{
-    statusSchema: {
-        sfjs: {
 
-            // Low Side status model
-            status : ($SFJS_MODEL << {
-                model: {
+    // Low Side status model
+    $SFJS_MODEL << {
+        model: {
+            type: object,
+            required: [system],
+            additionalProperties: false,
+            properties: {
+                system: {
                     type: object,
-                    required: [system],
+                    required: [status],
                     additionalProperties: false,
                     properties: {
-                        system: {
+                        status: {
                             type: object,
-                            required: [status],
                             additionalProperties: false,
-                            properties: {
-                                status: {
-                                    type: object,
-                                    additionalProperties: false,
-                                }
-                            }
-                        }
-                    }
+                        },
+                    },
                 },
-            })
-        }
+            },
+        },
     }
-}
