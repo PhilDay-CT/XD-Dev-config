@@ -1,0 +1,76 @@
+//sfSig:{"sig": "3046022100f3222da776bac289e5ddc63452be9a37751c8ce27bb9a5611d2227b5c049500a02210080704c4d60223fee06820f2530b64569d92062e58e7a7800a821e4aa1df3a546", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDgxNjE4MDkxN1oXDTM0MDgxNDE4MDkxN1owYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABAT8rSVBw5oFDMkdkfez3rM3Na8gSIb3SSlovkoA6T7J1vDueZyqrndI$!$aDbvQjKDYxT1p7DdsB7etGP3WDocEXOjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUEu3Q$!$qtIP3h8krX5fHcLRiKhyIYIwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBSqYd9d6yD2b9hzT37PD3ZoIe3D2DAKBggqhkjOPQQDAgNIADBF$!$AiEApvBDT8tEWIWefweWT1fcWZ/dt+jEUELDrxlZbqFrFE0CIHKsX7gB5bjq926w$!$SBRfgBLzqVIJl9m35EBBgmrSE5+3$!$-----END CERTIFICATE-----$!$", "description": "", "timestamp":"1755533915456", "timelimit":"0"}
+//sfTimestamp:1755533915456
+//sfLabel:/opt/ct/signing/files/Schemas/System/PipelineStatus.sfjs
+let
+    STATUS: require('./Schemas/System/Templates/Status.sfjt'),
+
+    //
+    // Low side Status for a single Pipeline
+    //
+    LOW_PIPELINE_STATUS: {
+        type: 'object',
+        properties: {
+            details: {
+                type: ['object','string'],
+                properties: {
+                    pipeline: {type: 'string'},
+                    group: {type: 'string'},
+                    domain: {type: 'string'},
+                    node: {type: 'string'},
+                    timeout: {type: 'integer'},
+                    maxLength: 5000,
+                },
+                additionalProperties: false,
+            },
+            status: {type: 'string'},
+            msg: {type: 'string'},
+        },
+        additionalProperties: false,    
+        required: ['status']
+    },
+
+
+    // Status for the set of Pipelines deployed by the system
+    LOW_PIPELINES: {
+        type: 'object',
+        properties: {
+            _legend: {type: 'object'},
+            _kind:   {type: 'string', const: 'Pipeline'},
+        },
+        patternProperties: {
+           "^Import$|^Export$|^System$": {
+                type: 'object',
+                patternProperties: {
+                    "^[a-zA-Z0-9\\-\\_\\ \\(\\)]*$": {
+                        type: 'object',
+                        patternProperties: {
+                            "^Receiver:.*|^Sender:.*|^Low.*": $LOW_PIPELINE_STATUS
+                        },
+                        additionalProperties: false,
+                    },
+                },
+                additionalProperties: false,
+            }
+        },
+        additionalProperties: false,
+    }  
+in
+{
+    sfjs: {
+        status: ($STATUS << {
+            model: {
+                properties: {
+                    system : {
+                        properties: {
+                            status: {
+                                properties : {
+                                    Pipelines:  $LOW_PIPELINES,
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }).schema
+    }
+}   
