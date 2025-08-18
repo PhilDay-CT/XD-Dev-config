@@ -2,9 +2,6 @@ let
     SFJS_MODEL: require('./Schemas/System/Templates/sfjsModel.sfjt'),
 in
 {
-    // Define the Data for this status type
-    statusData: {},
-
     statusSchema: {
         sfjs: {
 
@@ -23,7 +20,6 @@ in
                                 status: {
                                     type: object,
                                     additionalProperties: false,
-                                    properties: @statusData
                                 }
                             }
                         }
