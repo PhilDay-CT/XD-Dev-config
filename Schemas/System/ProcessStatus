@@ -1,0 +1,26 @@
+let
+    STATUS: require('./Schemas/System/Templates/Status.sfjt'),
+
+    //
+    // Low side PROCESS Status
+    //
+    LOW_PROCESSES: {
+        type: 'object',
+        properties: {
+          	_legend: {type: 'object'},
+            _kind:   {type: 'string', const: 'Process'},
+        },
+        patternProperties: {
+           "^low_": {type: 'object'}
+        },
+        additionalProperties: false,
+    },
+
+in
+
+    $STATUS << {
+        data: {
+           Processes:  $LOW_PROCESSES 
+        }
+    }
+     
