@@ -6,7 +6,7 @@ in
     sfjs: {
 
         // Define the Data for this status type
-        data: {},
+        statusData: {},
 
         // Low Side status model
         status : ($SFJS_MODEL << {
@@ -23,7 +23,7 @@ in
                             status: {
                                 type: object,
                                 additionalProperties: false,
-                                properties: @data
+                                properties: @statusData
                             }
                         }
                     }
