@@ -17,9 +17,22 @@ let
     },
 
 in
-
-    ($STATUS << {
-        statusData: {
-           Processes:  $LOW_PROCESSES 
-        }
-    }).statusSchema
+{
+    sfjs: {
+        status: $STATUS << {
+            model: {
+                properties: {
+                    system : {
+                        properties: {
+                            status: {
+                                properties : {
+                                    Processes:  $LOW_PROCESSES 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }.schema
+    }
+}   
