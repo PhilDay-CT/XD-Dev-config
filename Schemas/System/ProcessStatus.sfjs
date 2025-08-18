@@ -19,7 +19,7 @@ let
 in
 
     $STATUS << {
-        data: {
+        statusData: {
            Processes:  $LOW_PROCESSES 
         }
-    }
+    }.schema
