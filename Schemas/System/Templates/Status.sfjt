@@ -2,33 +2,34 @@ let
     SFJS_MODEL: require('./Schemas/System/Templates/sfjsModel.sfjt'),
 in
 {
+    // Define the Data for this status type
+    statusData: {},
 
-    sfjs: {
+    schema: {
+        sfjs: {
 
-        // Define the Data for this status type
-        statusData: {},
-
-        // Low Side status model
-        status : ($SFJS_MODEL << {
-            model: {
-                type: object,
-                required: [system],
-                additionalProperties: false,
-                properties: {
-                    system: {
-                        type: object,
-                        required: [status],
-                        additionalProperties: false,
-                        properties: {
-                            status: {
-                                type: object,
-                                additionalProperties: false,
-                                properties: @statusData
+            // Low Side status model
+            status : ($SFJS_MODEL << {
+                model: {
+                    type: object,
+                    required: [system],
+                    additionalProperties: false,
+                    properties: {
+                        system: {
+                            type: object,
+                            required: [status],
+                            additionalProperties: false,
+                            properties: {
+                                status: {
+                                    type: object,
+                                    additionalProperties: false,
+                                    properties: @statusData
+                                }
                             }
                         }
                     }
-                }
-            },
-        }).schema
+                },
+            }).schema
+        }
     }
 }
