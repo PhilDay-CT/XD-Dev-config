@@ -18,19 +18,4 @@
         },
     },
 
-    //
-    // Lora Admin User Configuration.  This is only used for
-    // support tasks that need access via the GUI, and should
-    // normally be left disabled. It is not used by the
-    // configuration process.
-    //
-    lora: {
-        users: {
-            admin: {
-                password: "LoraAdmin",
-                isActive: false
-            }
-        }
-    }
-    
 }

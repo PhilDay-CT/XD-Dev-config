@@ -60,6 +60,8 @@ in
         },
     },
     
-    ThingsBoardSender: $TB_SENDER,
+    ThingsBoardSender: $TB_SENDER << {
+        configPath: ['Emulators'],
+    },
 
 }
