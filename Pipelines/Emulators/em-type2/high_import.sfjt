@@ -1,5 +1,5 @@
-//sfSig:{"sig": "3046022100cbc78a7f610048494781be0eae0e13b8b659077567df6e522170167c8cf741fb022100cd8c1314cad36bda2177c8e92f6953ea9dda248b079facabf793e403e7c2381c", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDgxNjE4MDkxN1oXDTM0MDgxNDE4MDkxN1owYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABAT8rSVBw5oFDMkdkfez3rM3Na8gSIb3SSlovkoA6T7J1vDueZyqrndI$!$aDbvQjKDYxT1p7DdsB7etGP3WDocEXOjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUEu3Q$!$qtIP3h8krX5fHcLRiKhyIYIwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBSqYd9d6yD2b9hzT37PD3ZoIe3D2DAKBggqhkjOPQQDAgNIADBF$!$AiEApvBDT8tEWIWefweWT1fcWZ/dt+jEUELDrxlZbqFrFE0CIHKsX7gB5bjq926w$!$SBRfgBLzqVIJl9m35EBBgmrSE5+3$!$-----END CERTIFICATE-----$!$", "description": "Pipelines/Emulators/em-type2/high_import.sfjt signed by ct-admin", "timestamp":"1755593845084", "timelimit":"0"}
-//sfTimestamp:1755593845084
+//sfSig:{"sig": "3045022100d598cd8a2674e277cb59445404d0b598c66626b0d6b5287f59d3e40a1c5e71f602204e8f4ab176c8850c15fddf120eea2fb31dba1180e6c05bb9c90d582c61efd83d", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDgxNjE4MDkxN1oXDTM0MDgxNDE4MDkxN1owYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABAT8rSVBw5oFDMkdkfez3rM3Na8gSIb3SSlovkoA6T7J1vDueZyqrndI$!$aDbvQjKDYxT1p7DdsB7etGP3WDocEXOjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUEu3Q$!$qtIP3h8krX5fHcLRiKhyIYIwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBSqYd9d6yD2b9hzT37PD3ZoIe3D2DAKBggqhkjOPQQDAgNIADBF$!$AiEApvBDT8tEWIWefweWT1fcWZ/dt+jEUELDrxlZbqFrFE0CIHKsX7gB5bjq926w$!$SBRfgBLzqVIJl9m35EBBgmrSE5+3$!$-----END CERTIFICATE-----$!$", "description": "Pipelines/Emulators/em-type2/high_import.sfjt signed by ct-admin", "timestamp":"1761222317502", "timelimit":"0"}
+//sfTimestamp:1761222317502
 //sfLabel:Pipelines/Emulators/em-type2/high_import.sfjt
 
 //
@@ -28,6 +28,19 @@ in
         },
     },
 
+    // Selectively add senders depending on the configured integrations  
+    Senders: [null, null] <<
+        if @integrations.mqtt.enabled then
+            [MQTT, _]
+        else
+            []
+        fi <<
+        if @integrations.thingsboard.enabled then
+            [_, "ThingsBoard.Parser"]
+        else
+            []
+        fi,
+
     SchemaCheck: $SCHEMA_CHECKER << {
         targets: {
             default: [MQTT, ThingsBoard]
@@ -36,32 +49,41 @@ in
 
     // Sent to MQTT.  As this is the last node also 
     // send the pipeline stats
-    MQTT: $MQTT_SENDER << {
-        format: 'json',
-        targets: {
-            stats: Stats, 
-        },
-    },
+    MQTT: if @integrations.mqtt.enabled then
+        $MQTT_SENDER << {
+            format: 'json',
+            targets: {stats: Stats},
+        }
+        else
+            {}
+        fi,
 
-    // Get Lora Values as metrics for Thingsboard
-    ThingsBoard: $FUNCTION << {
         
-        // Path to High side configurtaion data
-        configPath: ['Emulators'],
+    // Get Lora Values as metrics for Thingsboard
+    ThingsBoard: if @integrations.thingsboard.enabled then
+        {
+        
+            Parser: $FUNCTION << {
 
-        // Functions to apply to each message
-        functions: {
-            default: {name: GetLoRaArrayValues, operation: replace}
-        },
+                // Path to High side configurtaion data
+                configPath: ['Emulators'],
 
-        // Pass the extracted metrics to Thingboard
-        targets:   {
-            default: ThingsBoardSender
-        },
-    },
+                // Functions to apply to each message
+                functions: {
+                    default: {name: GetLoRaValues, operation: replace}
+                },
+
+                // Pass the extracted metrics to Thingboard
+                targets:   {default: ThingsBoardSender},
+            },
     
-    ThingsBoardSender: $TB_SENDER << {
-        configPath: ['Emulators'],
-    },
+            // Sent to Thingboard
+            ThingsBoardSender: $TB_SENDER << {
+                configPath: ['Emulators']
+            }
+        }
+    else
+        {}
+    fi,
 
 }
