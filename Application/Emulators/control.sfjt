@@ -14,7 +14,7 @@
 
     // Data Drift Anomaly
     emdev1: true,    // Continually sends data with small random offsets,
-    emdev2: false,
+    emdev2: true,
     emdev3: false,
     emdev4: false,    // Device with a temperature jump after 10 frames
 
