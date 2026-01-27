@@ -6,7 +6,22 @@ let
 in
 
 // Template for Low Side status model
+//
+// Extend by defining the model element and then using .model
+//
+// For example:
+//
+// let
+//     STATUS: require('./Schemas/System/Templates/Status.sfjt')
+// in
+// {   
+//    myStatus: ($STATUS << {
+//        status_model:  <schema for the status>
+//    }).schema 
+//
+
 $SFJS_MODEL << {
+    status_schema: {},
     model: {
         type: object,
         required: [system],
@@ -20,6 +35,7 @@ $SFJS_MODEL << {
                     status: {
                         type: object,
                         additionalProperties: false,
+                        properties: @status_schema
                     },
                 },
             },

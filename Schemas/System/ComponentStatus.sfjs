@@ -24,21 +24,11 @@ in
 {
     sfjs: {
         status: ($STATUS << {
-            model: {
-                properties: {
-                    system : {
-                        properties: {
-                            status: {
-                                properties: {
-                                    System : {
-                                        type: object,
-                                        properties : {
-                                            Components: $LOW_COMPONENTS
-                                        }
-                                    }
-                                }
-                            }
-                        }
+            status_schema: {
+                System : {
+                    type: object,
+                    properties : {
+                        Components: $LOW_COMPONENTS
                     }
                 }
             }

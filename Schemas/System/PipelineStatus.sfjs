@@ -76,18 +76,8 @@ in
 {
     sfjs: {
         status: ($STATUS << {
-            model: {
-                properties: {
-                    system : {
-                        properties: {
-                            status: {
-                                properties : {
-                                    Pipelines:  $LOW_ZONE_PIPELINES,
-                                }
-                            }
-                        }
-                    }
-                }
+            status_schema: {
+                Pipelines:  $LOW_ZONE_PIPELINES,
             }
         }).schema
     }

@@ -23,21 +23,11 @@ in
 {
     sfjs: {
         status: ($STATUS << {
-            model: {
-                properties: {
-                    system : {
-                        properties: {
-                            status: {
-                                properties : {
-                                    System : {
-                                        type: object,
-                                        properties : {
-                                            Processes:  $LOW_PROCESSES 
-                                        }
-                                    }
-                                }
-                            }
-                        }
+            status_schema: {
+                System : {
+                    type: object,
+                    properties : {
+                        Processes:  $LOW_PROCESSES 
                     }
                 }
             }
