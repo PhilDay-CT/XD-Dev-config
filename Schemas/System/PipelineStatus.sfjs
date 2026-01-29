@@ -1,5 +1,5 @@
-//sfSig:{"sig": "3045022100b7c56bb04f2fcdf6e5fbfd68f099d359dae68d2ba2d9912594a3fd5e66cff07c02204790f6d3a12166f113c3995f9aa1d993a710d82a8be6ab567c7d57bdc2f3b076", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDgxNjE4MDkxN1oXDTM0MDgxNDE4MDkxN1owYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABAT8rSVBw5oFDMkdkfez3rM3Na8gSIb3SSlovkoA6T7J1vDueZyqrndI$!$aDbvQjKDYxT1p7DdsB7etGP3WDocEXOjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUEu3Q$!$qtIP3h8krX5fHcLRiKhyIYIwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBSqYd9d6yD2b9hzT37PD3ZoIe3D2DAKBggqhkjOPQQDAgNIADBF$!$AiEApvBDT8tEWIWefweWT1fcWZ/dt+jEUELDrxlZbqFrFE0CIHKsX7gB5bjq926w$!$SBRfgBLzqVIJl9m35EBBgmrSE5+3$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/PipelineStatus.sfjs signed by ct-admin", "timestamp":"1769688978404", "timelimit":"0"}
-//sfTimestamp:1769688978404
+//sfSig:{"sig": "3046022100d10f7dd84981844f02a40c4fb94e427000d0477a417dce166e518b73dfa6ecca022100ecf665c964949e5c92543296a0559a6ee4f98406fb4f572d1324ef33c6f8592f", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDgxNjE4MDkxN1oXDTM0MDgxNDE4MDkxN1owYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABAT8rSVBw5oFDMkdkfez3rM3Na8gSIb3SSlovkoA6T7J1vDueZyqrndI$!$aDbvQjKDYxT1p7DdsB7etGP3WDocEXOjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUEu3Q$!$qtIP3h8krX5fHcLRiKhyIYIwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBSqYd9d6yD2b9hzT37PD3ZoIe3D2DAKBggqhkjOPQQDAgNIADBF$!$AiEApvBDT8tEWIWefweWT1fcWZ/dt+jEUELDrxlZbqFrFE0CIHKsX7gB5bjq926w$!$SBRfgBLzqVIJl9m35EBBgmrSE5+3$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/PipelineStatus.sfjs signed by ct-admin", "timestamp":"1769689430169", "timelimit":"0"}
+//sfTimestamp:1769689430169
 //sfLabel:Schemas/System/PipelineStatus.sfjs
 let
     STATUS: require('./Schemas/System/Templates/Status.sfjt'),
@@ -17,31 +17,8 @@ let
     },
 
     //
-    // Status reported by an XD_Sender
+    // Status reported by an XD_Reciver
     //
-    LOW_PIPELINE_SENDER_STATUS: {
-        type: 'object',
-        required: ['status'],
-        additionalProperties: false,    
-        properties: {
-            details: {
-                type: ['object','string'],
-                properties: {
-                    pipeline: {type: 'string', pattern: '^[a-zA-Z0-9_\\-]+$', maxLength: 20},
-                    group: {type: 'string',    pattern: '^[a-zA-Z0-9_\\-]+$', maxLength: 20},
-                    domain: {type: 'string',   pattern: '^[a-zA-Z0-9_\\- ]+$', maxLength: 20},
-                    node: {type: 'string',     pattern: '^[a-zA-Z0-9_\\-.]+$', maxLength: 200},
-                    timeout: {type: 'integer'},
-                    url: {type: 'string', maxLength: 200},
-                    error: {type: 'string', maxLength: 500},
-                },
-                additionalProperties: false,
-            },
-            status: {type: 'string'},
-            msg: {type: 'string'},
-        },
-    },
-
     LOW_PIPELINE_RECEIVER_STATUS: {
         type: 'object',
         required: ['status'],
@@ -50,11 +27,11 @@ let
             details: {
                 type: ['object','string'],
                 properties: {
-                    pipeline: {type: 'string'},
-                    group: {type: 'string'},
-                    domain: {type: 'string'},
-                    node: {type: 'string'},
-                },
+                    pipeline: {type: 'string', pattern: '^[a-zA-Z0-9_\\-]+$',  maxLength: 20},
+                    group: {type: 'string',    pattern: '^[a-zA-Z0-9_\\-]+$',  maxLength: 20},
+                    domain: {type: 'string',   pattern: '^[a-zA-Z0-9_\\- ]+$', maxLength: 20},
+                    node: {type: 'string',     pattern: '^[a-zA-Z0-9_\\-.]+$', maxLength: 200},
+                    },
                 additionalProperties: false,
             },
             status: {type: 'string'},
@@ -62,6 +39,28 @@ let
         },
     },
 
+    //
+    // Status reported by an XD_Sender - an extention of the Receiver status
+    // to include error details 
+    //
+    LOW_PIPELINE_SENDER_STATUS: $LOW_PIPELINE_RECEIVER_STATUS << {
+        properties: {
+            details: {
+                type: ['object','string'],
+                properties: {
+                    timeout: {type: 'integer'},
+                    url:   {type: 'string', maxLength: 200},
+                    error: {type: 'string', maxLength: 500},
+                },
+            },
+        },
+    },
+
+
+    //
+    // Status reported by a Pipeline Manager when it dynamically deployes
+    // a pipeline
+    //
     LOW_PIPELINE_DEPLOY_STATUS: {
         type: 'object',
         required: ['status'],
@@ -72,8 +71,10 @@ let
         }
     },
 
+    //
     // Collection of Status elements for a low domain section
     // of a pipeline
+    //
     LOW_PIPELINE_STATUS: {    
         type: 'object',
         additionalProperties: false,
@@ -90,7 +91,9 @@ let
         },
     },
 
+    //
     // Pipeline Status Schema
+    //
     LOW_PIPELINES: {
         type: 'object',
         additionalProperties: false,
@@ -103,7 +106,9 @@ let
         },
     },
 
-    //  Pipeline Status schame when running with zones
+    //
+    //  Pipeline Status Schema when running with zones
+    //
     LOW_ZONE_PIPELINES: {
         type: 'object',
         additionalProperties: false,
