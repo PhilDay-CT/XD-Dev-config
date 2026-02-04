@@ -24,11 +24,12 @@ let
             details: {
                 type: ['object','string'],
                 properties: {
+                    zone:     {type: 'string', pattern: '^[a-zA-Z0-9_\\-.]+$', maxLength: 20},
+                    group:    {type: 'string', pattern: '^[a-zA-Z0-9_\\-]+$',  maxLength: 20},
                     pipeline: {type: 'string', pattern: '^[a-zA-Z0-9_\\-]+$',  maxLength: 20},
-                    group: {type: 'string',    pattern: '^[a-zA-Z0-9_\\-]+$',  maxLength: 20},
-                    domain: {type: 'string',   pattern: '^[a-zA-Z0-9_\\- ]+$', maxLength: 20},
-                    node: {type: 'string',     pattern: '^[a-zA-Z0-9_\\-.]+$', maxLength: 200},
-                    },
+                    domain:   {type: 'string', pattern: '^[a-zA-Z0-9_\\- ]+$', maxLength: 20},
+                    node:     {type: 'string', pattern: '^[a-zA-Z0-9_\\-.]+$', maxLength: 200},
+                },
                 additionalProperties: false,
             },
             status: {type: 'string'},
