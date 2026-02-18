@@ -1,5 +1,5 @@
-//sfSig:{"sig": "3046022100b3af017bdc679433d2104534f15caff071319f01c32cdb2b10d1430bd0e6dfe9022100cf9fd2cace98f5270dda9d8a5537ea57bf28fae9fd3b93d9f6a65b8072266958", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDgxNjE4MDkxN1oXDTM0MDgxNDE4MDkxN1owYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABAT8rSVBw5oFDMkdkfez3rM3Na8gSIb3SSlovkoA6T7J1vDueZyqrndI$!$aDbvQjKDYxT1p7DdsB7etGP3WDocEXOjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUEu3Q$!$qtIP3h8krX5fHcLRiKhyIYIwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBSqYd9d6yD2b9hzT37PD3ZoIe3D2DAKBggqhkjOPQQDAgNIADBF$!$AiEApvBDT8tEWIWefweWT1fcWZ/dt+jEUELDrxlZbqFrFE0CIHKsX7gB5bjq926w$!$SBRfgBLzqVIJl9m35EBBgmrSE5+3$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/ProcessStatus.sfjs signed by ct-admin", "timestamp":"1771428383051", "timelimit":"0"}
-//sfTimestamp:1771428383051
+//sfSig:{"sig": "304502207c4a51297946fcdf8f2c48833f9d27f5010fb62dbed7f7e695efd4f1a5c71fad0221009202b5a19b00bda974f5ef9adf5b31251f57e07d29c1e2077a3dcdc2d91615f3", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDgxNjE4MDkxN1oXDTM0MDgxNDE4MDkxN1owYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABAT8rSVBw5oFDMkdkfez3rM3Na8gSIb3SSlovkoA6T7J1vDueZyqrndI$!$aDbvQjKDYxT1p7DdsB7etGP3WDocEXOjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUEu3Q$!$qtIP3h8krX5fHcLRiKhyIYIwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBSqYd9d6yD2b9hzT37PD3ZoIe3D2DAKBggqhkjOPQQDAgNIADBF$!$AiEApvBDT8tEWIWefweWT1fcWZ/dt+jEUELDrxlZbqFrFE0CIHKsX7gB5bjq926w$!$SBRfgBLzqVIJl9m35EBBgmrSE5+3$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/ProcessStatus.sfjs signed by ct-admin", "timestamp":"1771429243135", "timelimit":"0"}
+//sfTimestamp:1771429243135
 //sfLabel:Schemas/System/ProcessStatus.sfjs
 let
     STATUS: require('./Schemas/System/Templates/Status.sfjt'),
@@ -66,6 +66,38 @@ let
     //
     // Low side Process Status
     //
+    //
+    // This is based on hostnames of the form '<host>.low.ctxd' or '<host>.low.<zone>.ctxd'
+    //
+    
+    // low.<host>
+    LOW_PROCESSES_STATUS: {
+        type: 'object',
+        additionalProperties: false,
+        properties: {
+        low: {
+                type: 'object',
+                additionalProperties: false,
+                patternProperties: {
+                    "^[A-Za-z0-9][A-Za-z0-9-_]*$": $PROCESSES_STATUS
+                }
+            }
+        },
+    },
+
+    // <zone>.low.<host>
+    LOW_ZONE_PROCESSES_STATUS: {
+       type: 'object',
+        additionalProperties: false,
+        patternProperties:
+        {
+            "^zone[0-9]*$": $LOW_PROCESSES_STATUS
+        }
+    },
+
+    //
+    // Low side Process Status
+    //
     LOW_PROCESSES: {
         type: 'object',
         additionalProperties: false,
@@ -73,39 +105,9 @@ let
           	_legend: $PROCESS_LEGEND,
             ctxd: {
                 oneOf: [
-                {
-                    type: 'object',
-                    additionalProperties: false,
-                    properties: {
-                    low: {
-                            type: 'object',
-                            additionalProperties: false,
-                            patternProperties: {
-                                "^[A-Za-z0-9][A-Za-z0-9-_]*$": $PROCESSES_STATUS
-                            }
-                        }
-                    },
-                },
-                
-                {
-                    type: object,
-                    additionalProperties: false,
-                    patternProperties: {
-                        "^zone[0-9]*$": {
-                            type: 'object',
-                            additionalProperties: false,
-                            properties: {
-                                low: {
-                                    type: 'object',
-                                    additionalProperties: false,
-                                    patternProperties: {
-                                        "^[A-Za-z0-9][A-Za-z0-9-_]*$": $PROCESSES_STATUS
-                                    }
-                                }
-                            }
-                        }
-                    },
-                }]
+                    $LOW_PROCESSES_STATUS,
+                    $LOW_ZONE_PROCESSES_STATUS,
+                ]
             }
         },
     },
