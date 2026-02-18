@@ -1,10 +1,10 @@
-//sfSig:{"sig": "304402202502eb0c8f42b83ecd5674f91a177754c1c47c9d91417ded9bbab010841b0f7c022078514c4ad52efd0b58e3145824238a1944440886fdd815672669b4934a96f084", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDgxNjE4MDkxN1oXDTM0MDgxNDE4MDkxN1owYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABAT8rSVBw5oFDMkdkfez3rM3Na8gSIb3SSlovkoA6T7J1vDueZyqrndI$!$aDbvQjKDYxT1p7DdsB7etGP3WDocEXOjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUEu3Q$!$qtIP3h8krX5fHcLRiKhyIYIwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBSqYd9d6yD2b9hzT37PD3ZoIe3D2DAKBggqhkjOPQQDAgNIADBF$!$AiEApvBDT8tEWIWefweWT1fcWZ/dt+jEUELDrxlZbqFrFE0CIHKsX7gB5bjq926w$!$SBRfgBLzqVIJl9m35EBBgmrSE5+3$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/ProcessStatus.sfjs signed by ct-admin", "timestamp":"1770641792933", "timelimit":"0"}
-//sfTimestamp:1770641792933
+//sfSig:{"sig": "30450220105a47b2cc621e1783844cd304cfcdeb9d26f3324d7964b8d549387fcec6d925022100e556f63aef8d8577f9bc5dbc4aa80030f7526e3a99f5eeb1723514ff96d040da", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI0$!$MDgxNjE4MDkxN1oXDTM0MDgxNDE4MDkxN1owYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABAT8rSVBw5oFDMkdkfez3rM3Na8gSIb3SSlovkoA6T7J1vDueZyqrndI$!$aDbvQjKDYxT1p7DdsB7etGP3WDocEXOjggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUEu3Q$!$qtIP3h8krX5fHcLRiKhyIYIwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBSqYd9d6yD2b9hzT37PD3ZoIe3D2DAKBggqhkjOPQQDAgNIADBF$!$AiEApvBDT8tEWIWefweWT1fcWZ/dt+jEUELDrxlZbqFrFE0CIHKsX7gB5bjq926w$!$SBRfgBLzqVIJl9m35EBBgmrSE5+3$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/ProcessStatus.sfjs signed by ct-admin", "timestamp":"1771427614830", "timelimit":"0"}
+//sfTimestamp:1771427614830
 //sfLabel:Schemas/System/ProcessStatus.sfjs
 let
     STATUS: require('./Schemas/System/Templates/Status.sfjt'),
     LEGEND: require('./Schemas/System/Templates/Status_Legend.sfjt'),
-
+    
     //
     // Process Legend
     //
@@ -17,7 +17,7 @@ let
     },
 
     //
-    // Process Status
+    // Status of a single component
     //
     PROCESS_STATUS: {
         type: 'object',
@@ -43,6 +43,9 @@ let
         },
     },
 
+    //
+    // Status of a set of components
+    //
     PROCESSES_STATUS: {
         type: 'object',
         additionalProperties: false, 
@@ -61,48 +64,53 @@ let
     },
 
     //
-    // Low side PROCESS Status
+    // Low side Process Status
     //
     LOW_PROCESSES: {
         type: 'object',
         additionalProperties: false,
         properties: {
           	_legend: $PROCESS_LEGEND,
-        },
-        patternProperties: {
-           "^low_": $PROCESSES_STATUS
-        },
-    },
-
-    LOW_ZONE_PROCESSES: {
-        type: 'object',
-        additionalProperties: false,
-        properties: {
-          	_legend: $PROCESS_LEGEND,
-        },
-        patternProperties: {
-            "^Zone.*$": {
+            ctxd: {
                 type: 'object',
                 additionalProperties: false,
                 patternProperties: {
-                    "^low_": $PROCESSES_STATUS
-                },
+                    oneOf: [
+                    {    low: {
+                            type: 'object',
+                            additionalProperties: false,
+                            patternProperties: {
+                                "^[A-Za-z0-9][A-Za-z0-9-_]*$": $PROCESSES_STATUS
+                            }
+                        }
+                    },
+                    {
+                        "^zone[0-9]+": {
+                            type: 'object',
+                            additionalProperties: false,
+                            properties: {
+                                low: {
+                                    type: 'object',
+                                    additionalProperties: false,
+                                    patternProperties: {
+                                        "^[A-Za-z0-9][A-Za-z0-9-_]*$": $PROCESSES_STATUS
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    ]
+                }
             }
         },
-    }  
-
+    },
 
 in
 {
     sfjs: {
         status: ($STATUS << {
             status_schema: {
-                System: 
-                    if @zone == '' then
-                        $LOW_PROCESSES
-                    else
-                        $LOW_ZONE_PROCESSES
-                    fi
+                System: $LOW_PROCESSES
             }
         }).schema
     }
