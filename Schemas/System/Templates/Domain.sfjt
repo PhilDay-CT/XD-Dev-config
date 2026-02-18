@@ -1,0 +1,23 @@
+let
+    FIXED_OBJECT: {
+        type: object,
+        additionalProperties: false,
+    }
+in
+{
+    model: {},
+    domain: $FIXED_OBJECT << {
+        required: [ctxd],
+        properties: {
+            ctxd: $FIXED_OBJECT << {
+                properties: {
+                    low: $FIXED_OBJECT << {
+                        patternproperties: {
+                            "^[A-Za-z0-9][A-Za-z0-9-_]*$": @model
+                        } 
+                    }
+                }
+            }
+        }
+    }
+}
