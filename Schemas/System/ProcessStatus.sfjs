@@ -1,5 +1,5 @@
-//sfSig:{"sig": "3044022068a139012f895077c779e01a9a22e33f1e7e067f3a8cc95fb4fb574a9d69f919022047f4a8af41ad9af1e38fdf2a1c2f2b05f3b4b6a425bee39e0f4227e7b4d6b428", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI2$!$MDQyNzEwMDQ1NVoXDTM2MDQyNDEwMDQ1NVowYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABD0quga7g80eD+A7G/TDWbag8mpXvzdyNgSmarIdIHMJ5G8SyR+zuG+7$!$uVfoPADdUX2emZAm5A5eSR94kdwN4F6jggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUoYj1$!$2J4zvQSWwAAkn7oI948tWZkwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBQksZOSdr3gHWW7WNqXrGap4RZ2wTAKBggqhkjOPQQDAgNIADBF$!$AiBksOf7dkWM0GmhHGScZULbfRxlLU9100qVtiBmFr0rSwIhANMDZTbErIK/Gstz$!$uo7sU8jHkuNPX3iEY94fI6ZfQTVw$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/ProcessStatus.sfjs signed by ct-admin", "timestamp":"1777306327290", "timelimit":"0"}
-//sfTimestamp:1777306327290
+//sfSig:{"sig": "3046022100fd06f6b2cd5d9fe3ad702b8e5f40f5791dbc31aaddfe007ed7c3b87c81c553bb022100cc00d3debb7085f6e1da0786703ad0b27f3defafdb37f461bd8683786b69cf7f", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI2$!$MDQyNzEwMDQ1NVoXDTM2MDQyNDEwMDQ1NVowYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABD0quga7g80eD+A7G/TDWbag8mpXvzdyNgSmarIdIHMJ5G8SyR+zuG+7$!$uVfoPADdUX2emZAm5A5eSR94kdwN4F6jggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUoYj1$!$2J4zvQSWwAAkn7oI948tWZkwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBQksZOSdr3gHWW7WNqXrGap4RZ2wTAKBggqhkjOPQQDAgNIADBF$!$AiBksOf7dkWM0GmhHGScZULbfRxlLU9100qVtiBmFr0rSwIhANMDZTbErIK/Gstz$!$uo7sU8jHkuNPX3iEY94fI6ZfQTVw$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/ProcessStatus.sfjs signed by ct-admin", "timestamp":"1778510786099", "timelimit":"0"}
+//sfTimestamp:1778510786099
 //sfLabel:Schemas/System/ProcessStatus.sfjs
 let
     STATUS: require('./Schemas/System/Templates/Status.sfjt'),
@@ -12,7 +12,7 @@ let
         type: 'object',
         additionalProperties: false, 
         properties: {
-            Process: $LEGEND,
+            Processes: $LEGEND,
         }
     },
 
@@ -54,7 +54,7 @@ let
                 type: object,
                 additionalProperties: false,
                 properties: {
-                    _kind:   {type: 'string', const: 'Process'},
+                    _kind:   {type: 'string', const: 'Processes'},
                 },
                 patternProperties: {
                     "^[a-zA-Z0-9][a-zA-Z0-9_-]+$": $PROCESS_STATUS
