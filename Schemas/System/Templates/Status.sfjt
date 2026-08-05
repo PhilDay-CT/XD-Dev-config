@@ -1,5 +1,5 @@
-//sfSig:{"sig": "3045022009ebd692ad0f7ea7a3ac21fe6786d3fc9b7dfba6c188727d688a11f0ea6249da02210084ff99b2b753764b644950fe8b7d3dc43ab34a84e4c3570ee61a93c6850b5151", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI2$!$MDQyNzEwMDQ1NVoXDTM2MDQyNDEwMDQ1NVowYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABD0quga7g80eD+A7G/TDWbag8mpXvzdyNgSmarIdIHMJ5G8SyR+zuG+7$!$uVfoPADdUX2emZAm5A5eSR94kdwN4F6jggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUoYj1$!$2J4zvQSWwAAkn7oI948tWZkwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBQksZOSdr3gHWW7WNqXrGap4RZ2wTAKBggqhkjOPQQDAgNIADBF$!$AiBksOf7dkWM0GmhHGScZULbfRxlLU9100qVtiBmFr0rSwIhANMDZTbErIK/Gstz$!$uo7sU8jHkuNPX3iEY94fI6ZfQTVw$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/Templates/Status.sfjt signed by ct-admin", "timestamp":"1777306343282", "timelimit":"0"}
-//sfTimestamp:1777306343282
+//sfSig:{"sig": "30440220239cd68a9cb000025878b1d2f6ee7b9be7aba096e3015f18208a4087facba6ed02204875e7044d486d5a5c9d3f399d5b8e887da7dffc5670ccf17f0869fff6649832", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI2$!$MDQyNzEwMDQ1NVoXDTM2MDQyNDEwMDQ1NVowYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABD0quga7g80eD+A7G/TDWbag8mpXvzdyNgSmarIdIHMJ5G8SyR+zuG+7$!$uVfoPADdUX2emZAm5A5eSR94kdwN4F6jggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUoYj1$!$2J4zvQSWwAAkn7oI948tWZkwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBQksZOSdr3gHWW7WNqXrGap4RZ2wTAKBggqhkjOPQQDAgNIADBF$!$AiBksOf7dkWM0GmhHGScZULbfRxlLU9100qVtiBmFr0rSwIhANMDZTbErIK/Gstz$!$uo7sU8jHkuNPX3iEY94fI6ZfQTVw$!$-----END CERTIFICATE-----$!$", "description": "Schemas/System/Templates/Status.sfjt signed by ct-admin", "timestamp":"1785929582168", "timelimit":"0"}
+//sfTimestamp:1785929582168
 //sfLabel:Schemas/System/Templates/Status.sfjt
 let
     SFJS_MODEL: require('./Schemas/System/Templates/sfjsModel.sfjt'),
@@ -24,12 +24,12 @@ $SFJS_MODEL << {
     status_schema: {},
     model: {
         type: object,
-        required: [system],
+        //required: [system],
         additionalProperties: false,
         properties: {
             system: {
                 type: object,
-                required: [status],
+                //required: [status],
                 additionalProperties: false,
                 properties: {
                     status: {
