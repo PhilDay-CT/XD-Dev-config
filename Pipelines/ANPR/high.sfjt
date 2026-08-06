@@ -1,0 +1,32 @@
+let
+    TEMPLATE_DIR: env(CT_HOME) + '/templates/',
+
+    // Templates configured for this domain
+    XD_RECEIVER:       require($TEMPLATE_DIR + 'XD_Receiver.sfjs'),
+    SCHEMA_CHECKER:    require($TEMPLATE_DIR + 'Schema_Checker.sfjs'),
+    MQTT_SENDER:       require($TEMPLATE_DIR + 'MQTT_Sender.sfjs'),
+    
+in
+{
+
+    Receiver: $XD_RECEIVER << {
+        id: @@name,
+        targets: {
+        //    default: SchemaCheck,
+            default: MQTT,
+        },
+    },
+
+    // Schema Checker
+    SchemaCheck: $SCHEMA_CHECKER << {
+        targets: {default: @MQTT},
+    },
+
+    // Sent to MQTT.  As this is the last node also 
+    // send the pipeline stats
+    MQTT: $MQTT_SENDER << {
+        format: 'json',
+        targets: {stats: Stats},
+    }
+    
+}

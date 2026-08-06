@@ -1,0 +1,13 @@
+{
+    Low: {
+        Import: {
+            "anpr": readstring('./low.sfjt'),
+        },
+    },
+
+    High: {
+        Import: {
+            "anpr": readstring('./high.sfjt'),
+        },
+    },
+}

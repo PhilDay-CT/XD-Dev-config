@@ -1,0 +1,33 @@
+let
+    // SFJS Components
+    SFJS_LIB:  '@configuredthings/sfjs-components/lib/',
+    HTTP_SERVER: require($SFJS_LIB + 'HTTPServer/HTTPServer.sfjs'),
+
+    TEMPLATE_DIR: env(CT_HOME) + '/templates/',
+
+    // Templates configured for this domain
+    HTTP_to_MQTT: require($TEMPLATE_DIR + 'HTTP_to_MQTT.sfjs'),
+    XD_SENDER:     require($TEMPLATE_DIR + 'XD_SENDER.sfjs'),
+
+in
+{
+
+    http: $HTTP_SERVER << {
+        http_port: 21800
+    },
+
+    http_to_mqtt: $HTTP_to_MQTT << {
+        http_server: lazy @http.sfInstance,
+        path: '/anpr/',
+        root_topic: 'anpr/'
+        targets: {
+            default: Onvif_Client,
+        },
+    },
+
+    xd_sender: $XD_SENDER << {
+        id: @@name,
+        messageKinds: ['mqtt'],
+    }
+
+}
