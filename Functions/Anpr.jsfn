@@ -1,25 +1,27 @@
-//sfSig:{"sig": "304502201f7e0ab4d7a731d5bf2e9f5a072f01277cbfec8c21764e358cbd5cf5031a9040022100fc577eafbe41155aa9f3035eaeb33f89129c8310d1645436fdeb19e7d66c6ba0", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI2$!$MDQyNzEwMDQ1NVoXDTM2MDQyNDEwMDQ1NVowYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABD0quga7g80eD+A7G/TDWbag8mpXvzdyNgSmarIdIHMJ5G8SyR+zuG+7$!$uVfoPADdUX2emZAm5A5eSR94kdwN4F6jggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUoYj1$!$2J4zvQSWwAAkn7oI948tWZkwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBQksZOSdr3gHWW7WNqXrGap4RZ2wTAKBggqhkjOPQQDAgNIADBF$!$AiBksOf7dkWM0GmhHGScZULbfRxlLU9100qVtiBmFr0rSwIhANMDZTbErIK/Gstz$!$uo7sU8jHkuNPX3iEY94fI6ZfQTVw$!$-----END CERTIFICATE-----$!$", "description": "Functions/Anpr.jsfn signed by ct-admin", "timestamp":"1786311499095", "timelimit":"0"}
-//sfTimestamp:1786311499095
+//sfSig:{"sig": "3045022026284b66d74d45818f6b88281734be3991795465b980babfbf8e63834cf2522d0221008cfa4378b226a2913dab6fa73d16ff6e7dff7f6b15496d627f6d6f94ee6b350a", "certPEM": "-----BEGIN CERTIFICATE-----$!$MIIDETCCAregAwIBAgIBATAKBggqhkjOPQQDAjBsMQswCQYDVQQGEwJVSzEfMB0G$!$A1UECgwWQ29uZmlndXJlZCBUaGluZ3MgTHRkLjENMAsGA1UECwwEY3R4ZDEOMAwG$!$A1UECwwFVXNlcnMxHTAbBgNVBAMMFGN0eGQtdXNlcnMtYWRtaW5zLWNhMB4XDTI2$!$MDQyNzEwMDQ1NVoXDTM2MDQyNDEwMDQ1NVowYDELMAkGA1UEBhMCVUsxHzAdBgNV$!$BAoMFkNvbmZpZ3VyZWQgVGhpbmdzIEx0ZC4xDTALBgNVBAsMBGN0eGQxDjAMBgNV$!$BAsMBVVzZXJzMREwDwYDVQQDDAhjdC1hZG1pbjBZMBMGByqGSM49AgEGCCqGSM49$!$AwEHA0IABD0quga7g80eD+A7G/TDWbag8mpXvzdyNgSmarIdIHMJ5G8SyR+zuG+7$!$uVfoPADdUX2emZAm5A5eSR94kdwN4F6jggFUMIIBUDCBjgYIKwYBBQUHAQEEgYEw$!$fzBFBggrBgEFBQcwAoY5aHR0cDovL2N0eGQtdXNlcnMtYWRtaW5zLWNhLmN0eGQv$!$Y3R4ZC11c2Vycy1hZG1pbnMtY2EuY3J0MDYGCCsGAQUFBzABhipodHRwOi8vb2Nz$!$cC5jdHhkLXVzZXJzLWFkbWlucy1jYS5jdHhkOjkwODEwHwYDVR0jBBgwFoAUoYj1$!$2J4zvQSWwAAkn7oI948tWZkwDAYDVR0TAQH/BAIwADBKBgNVHR8EQzBBMD+gPaA7$!$hjlodHRwOi8vY3R4ZC11c2Vycy1hZG1pbnMtY2EuY3R4ZC9jdHhkLXVzZXJzLWFk$!$bWlucy1jYS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeA$!$MB0GA1UdDgQWBBQksZOSdr3gHWW7WNqXrGap4RZ2wTAKBggqhkjOPQQDAgNIADBF$!$AiBksOf7dkWM0GmhHGScZULbfRxlLU9100qVtiBmFr0rSwIhANMDZTbErIK/Gstz$!$uo7sU8jHkuNPX3iEY94fI6ZfQTVw$!$-----END CERTIFICATE-----$!$", "description": "Functions/Anpr.jsfn signed by ct-admin", "timestamp":"1786311825397", "timelimit":"0"}
+//sfTimestamp:1786311825397
 //sfLabel:Functions/Anpr.jsfn
 async function (name, input, context, config) {
     
     const vrm = input.data.vrm;
-    let result = {}
+    let result = {
+        outputs: {
+            default: input 
+        }
+    };
 
     if (vrm in config) {
-        result.outputs = {
+        result.outputs['alert'] = {
+            kind: "alert",
             alert: {
-                kind: "alert",
-                alert: {
-                    type: "ANPR Alert",
-                    subject: vrm,
-                    message: config[vrm],
-                    origin: name,
-                },
-                details: input.data,
-            }
+                type: "ANPR Alert",
+                subject: vrm,
+                message: config[vrm],
+                origin: name,
+            },
+            details: input.data,
         }
-    }
+    };
 
     return results;
 }
